@@ -1,0 +1,60 @@
+{
+  "type": "object",
+  "$schema": "http://json-schema.org/draft-04/schema",
+  "id": "http://jsonschema.net",
+  "required":false,
+  "properties": {
+    "pluginLocations": {
+      "type": "object",
+      "required":true,
+      "properties": {
+        "course": {
+          "type": "object",
+          "properties": {
+            "_logo": {
+              "type": "object",
+              "required": false,
+              "legend": "Navigation Logo",
+              "properties": {
+                "_isEnabled": {
+                  "type": "boolean",
+                  "required": false,
+                  "title": "Enable Navigation Logo",
+                  "inputType": "Checkbox",
+                  "validators": [],
+                  "help": "Set to true to enable 'AATJSON' feature."
+                },
+                "_graphic": {
+                  "type":"object",
+                  "required":true,
+                  "title": "Graphic",
+                  "properties":{
+                    "alt": {
+                      "type":"string",
+                      "required":false,
+                      "default": "",
+                      "title": "Alternative Text",
+                      "inputType": "Text",
+                      "validators": [],
+                      "help": "The alternative text for this image",
+                      "translatable": true
+                    },
+                    "src": {
+                      "type":"string",
+                      "required":true,
+                      "default": "",
+                      "title": "Image",
+                      "inputType": "Asset:image",
+                      "validators": ["required"],
+                      "help": "A logo at 148 pixel wide by 30px high"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

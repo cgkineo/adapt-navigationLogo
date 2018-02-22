@@ -1,0 +1,16 @@
+{
+  "name": "adapt-navigationLogo",
+  "version": "1.0.2",
+  "framework": ">=2.0.18",
+  "homepage": "https://github.com/cgkineo/adapt-navigationLogo",
+  "displayName" : "Logo",
+  "extension" : "logo",
+  "description": "Navigation logo",
+  "main": "/js/adapt-navigationLogo.js",
+  "keywords": [
+    "adapt-plugin",
+    "adapt-extension"
+  ],
+  "license": "GPLv3",
+  "targetAttribute": "_logo"
+}
