@@ -4,7 +4,7 @@ define([
 
   var LogoView = Backbone.View.extend({
 
-    className: "navigation-logo",
+    className: "nav__logo",
 
     initialize: function() {
       this.render();

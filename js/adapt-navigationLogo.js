@@ -19,7 +19,7 @@ define([
         model: new Backbone.Model(config)
       });
 
-      var selector = ".navigation-inner > .navigation-back-button";
+      var selector = ".nav__inner > .nav__back-btn";
       this.logoView.$el.insertAfter($(selector));
 
     }
