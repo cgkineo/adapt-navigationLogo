@@ -1,7 +1,17 @@
-.navigation-logo {
-  width: 148px;
-  height: 30px;
-  background-size: 100%;
-  float: left;
-  margin: 17px 0 17px @item-padding;
+.nav {
+  &__logo {
+    float: left;
+    margin-left: @item-margin;
+  }
+
+  &__logo-inner {
+    height: 48px;
+    margin: (@item-margin / 2);
+  }
+
+  &__logo-inner img {
+    width: auto;
+    height: 100%;
+  }
 }
+
