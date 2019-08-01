@@ -1,8 +1,8 @@
 //course.json
-    "_logo": {
+    "_navigationLogo": {
         "_isEnabled": true,
         "_graphic": {
-            "src": "",
-            "_alt": "Company Logo"
+            "_src": "",
+            "alt": "Company Logo"
         }
     }

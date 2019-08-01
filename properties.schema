@@ -6,12 +6,12 @@
   "properties": {
     "pluginLocations": {
       "type": "object",
-      "required":true,
+      "required": true,
       "properties": {
         "course": {
           "type": "object",
           "properties": {
-            "_logo": {
+            "_navigationLogo": {
               "type": "object",
               "required": false,
               "legend": "Navigation Logo",
@@ -22,31 +22,31 @@
                   "title": "Enable Navigation Logo",
                   "inputType": "Checkbox",
                   "validators": [],
-                  "help": "Set to true to enable 'AATJSON' feature."
+                  "help": "Set to true to enable the 'Navigation Logo' feature."
                 },
                 "_graphic": {
                   "type":"object",
                   "required":true,
-                  "title": "Graphic",
+                  "title": "Logo image",
                   "properties":{
-                    "alt": {
-                      "type":"string",
-                      "required":false,
-                      "default": "",
-                      "title": "Alternative Text",
-                      "inputType": "Text",
-                      "validators": [],
-                      "help": "The alternative text for this image",
-                      "translatable": true
-                    },
-                    "src": {
-                      "type":"string",
-                      "required":true,
+                    "_src": {
+                      "type": "string",
+                      "required": true,
                       "default": "",
                       "title": "Image",
                       "inputType": "Asset:image",
                       "validators": ["required"],
-                      "help": "A logo at 148 pixel wide by 30px high"
+                      "help": "The provided logo must be 24px high"
+                    },
+                    "alt": {
+                      "type": "string",
+                      "required": false,
+                      "default": "",
+                      "title": "Logo image alternative Text",
+                      "inputType": "Text",
+                      "validators": [],
+                      "help": "The alternative text for this image",
+                      "translatable": true
                     }
                   }
                 }

@@ -1,10 +1,10 @@
 define([
-    'core/js/adapt'
+  'core/js/adapt'
 ], function(Adapt) {
 
   var LogoView = Backbone.View.extend({
 
-    className: "nav__logo",
+    className: "navigation-logo",
 
     initialize: function() {
       this.render();
@@ -16,7 +16,7 @@ define([
     }
 
   },{
-    template: "navigation-logo"
+    template: "navigationLogo"
   });
 
   return LogoView;
