@@ -1,8 +1,8 @@
 //course.json
-    "_logo": {
+    "_navigationLogo": {
         "_isEnabled": true,
         "_graphic": {
-            "src": "adapt/css/assets/logo.png",
-            "_alt": "Company Logo"
+            "src": "",
+            "alt": "Company Logo"
         }
     }

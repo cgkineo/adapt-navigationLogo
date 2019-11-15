@@ -1,24 +1,24 @@
 define([
-    'core/js/adapt'
+  'core/js/adapt'
 ], function(Adapt) {
 
-    var LogoView = Backbone.View.extend({
+  var LogoView = Backbone.View.extend({
 
-        className: "navigation-logo",
+    className: "navigation-logo",
 
-        initialize: function() {
-            this.render();
-        },
+    initialize: function() {
+      this.render();
+    },
 
-        render: function() {
-            var data = this.model.toJSON();
-            this.$el.html(Handlebars.templates[this.constructor.template](data));
-        }
+    render: function() {
+      var data = this.model.toJSON();
+      this.$el.html(Handlebars.templates[this.constructor.template](data));
+    }
 
-    },{
-        template: "navigation-logo"
-    });
+  },{
+    template: "navigationLogo"
+  });
 
-    return LogoView;
+  return LogoView;
 
 });
