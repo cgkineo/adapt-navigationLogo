@@ -1,10 +1,25 @@
-
 .navigation-logo {
   .u-float-left;
-  height: @icon-size + (@icon-padding * 2);
-  padding: @icon-padding;
 
-  &__image {
-    height: @icon-size;
+  // pre-set logo sizes
+  // displays 'large' by default
+  .large {
+    padding: @icon-padding / 2;
+
+    .navigation-logo__image {
+      height: @icon-size + @icon-padding;
+    }
+  }
+
+  .small {
+    padding: @icon-padding;
+
+    .navigation-logo__image {
+      height: @icon-size;
+    }
+  }
+
+  .fill &__image {
+    height: @icon-size + (@icon-padding * 2);
   }
 }
