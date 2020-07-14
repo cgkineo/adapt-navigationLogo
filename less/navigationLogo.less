@@ -3,23 +3,27 @@
 
   // pre-set logo sizes
   // displays 'large' by default
-  .large {
+
+  // Large logo display
+  .is-large {
     padding: @icon-padding / 2;
-
-    .navigation-logo__image {
-      height: @icon-size + @icon-padding;
-    }
   }
 
-  .small {
+  .is-large &__image {
+    height: @icon-size + @icon-padding;
+  }
+
+  // Small logo display
+  .is-small {
     padding: @icon-padding;
-
-    .navigation-logo__image {
-      height: @icon-size;
-    }
   }
 
-  .fill &__image {
+  .is-small &__image {
+    height: @icon-size;
+  }
+
+  // Fill logo display
+  .is-fill &__image {
     height: @icon-size + (@icon-padding * 2);
   }
 }
