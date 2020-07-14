@@ -26,22 +26,15 @@ define([
     },
 
     hideLogoForMobile: function() {
-      (Adapt.device.screenSize === 'small')
-        // mobile logo display
-        ? $(".navigation-logo__image").addClass('u-display-none')
-        // desktop logo display
-        : $(".navigation-logo__image").removeClass('u-display-none');
+      var isDeviceSmall = Adapt.device.screenSize === 'small';
+      $(".navigation-logo__image").toggleClass('u-display-none', isDeviceSmall);
     },
 
     setLogoImageSrc: function() {
-      var config = Adapt.course.get("_navigationLogo");
-      var mobileSrc = config._graphic._mobileSrc;
-      var src = config._graphic._src;
-      (Adapt.device.screenSize === 'small')
-        // mobile logo display
-        ? $(".navigation-logo__image").attr('src', mobileSrc)
-        // desktop logo display
-        : $(".navigation-logo__image").attr('src', src);
+      var config = this.model.get('_graphic');
+      var src = Adapt.device.screenSize === 'small' ? config._mobileSrc : config.src;
+
+      $('.navigation-logo__image').attr('src', src);
     },
 
     render: function() {
