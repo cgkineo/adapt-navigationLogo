@@ -2,7 +2,7 @@
     "_navigationLogo": {
         "_isEnabled": true,
         "_graphic": {
-            "_src": "",
+            "src": "assets/example.png",
             "_mobileSrc": "",
             "alt": ""
         },
