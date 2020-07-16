@@ -32,7 +32,7 @@ AT Compatible.
 No known limitations
 
 ----------------------------
-**Version number:**  2.2.0  
+**Version number:**  2.1.0  
 **Framework versions:**  5+  
 **Author / maintainer:** CGKineo  
 **Accessibility support:** WAI AA  
