@@ -16,12 +16,12 @@ define([
     },
 
     postRender: function() {
-      var config = Adapt.course.get("_navigationLogo");
-      if (config && config._hideLogoForMobile) {
+      var config = this.model.get('_graphic');
+      if (this.model.get('_hideLogoForMobile')) {
         this.hideLogoForMobile();
       }
-      if (config && config._graphic._mobileSrc) {
-        this.setLogoImageSrc();
+      if (config && config._mobileSrc) {
+        this.setLogoImageSrc(config);
       }
     },
 
@@ -30,8 +30,7 @@ define([
       $(".navigation-logo__image").toggleClass('u-display-none', isDeviceSmall);
     },
 
-    setLogoImageSrc: function() {
-      var config = this.model.get('_graphic');
+    setLogoImageSrc: function(config) {
       var src = Adapt.device.screenSize === 'small' ? config._mobileSrc : config.src;
 
       $('.navigation-logo__image').attr('src', src);
