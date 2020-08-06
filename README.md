@@ -20,7 +20,7 @@ AT Compatible.
 
 >>**alt** (string): This text becomes the image’s `alt` attribute.
 
->**\_logoSize** (string): This defines the size and padding of the logo image. Acceptable values are `small`, `large` or `fill`. Default value is `large`.
+>**\_fillNavHeight** (boolean): False by default, logo displays with minimal padding. Set to true for logo to fill the nav bar height.
 
 >**\_hideLogoForMobile** (boolean): Optional, hide logo for mobile view. Useful to declutter the navigation bar for mobile view where limited space is available.
 

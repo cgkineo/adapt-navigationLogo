@@ -1,28 +1,16 @@
 .navigation-logo {
   .u-float-left;
 
-  // pre-set logo sizes
-  // displays 'large' by default
-
-  // Large logo display
-  .is-large {
+  // default display
+  &__inner:not(.is-fill) {
     padding: @icon-padding / 2;
   }
 
-  .is-large &__image {
+  &__image {
     height: @icon-size + @icon-padding;
   }
 
-  // Small logo display
-  .is-small {
-    padding: @icon-padding;
-  }
-
-  .is-small &__image {
-    height: @icon-size;
-  }
-
-  // Fill logo display
+  // fill nav height display
   .is-fill &__image {
     height: @icon-size + (@icon-padding * 2);
   }

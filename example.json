@@ -6,7 +6,6 @@
             "_mobileSrc": "",
             "alt": ""
         },
-        "_comment": "Supported _logoSize classes = 'small', 'large', 'fill'",
-        "_logoSize": "large",
+        "_fillNavHeight": false,
         "_hideLogoForMobile": true
     }

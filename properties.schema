@@ -60,23 +60,20 @@
                     }
                   }
                 },
-                "_logoSize": {
-                  "type": "string",
+                "_fillNavHeight": {
+                  "type": "boolean",
                   "required": false,
-                  "default": "large",
-                  "title": "Set the size of the logo image",
-                  "inputType": {
-                    "type": "Select",
-                    "options": ["small", "large", "fill"]
-                  },
+                  "default": false,
+                  "title": "Logo fills the nav bar height",
+                  "inputType": "Checkbox",
                   "validators": [],
-                  "help": "Small: Logo image displays at the same size as navigation icons. Large: Logo image displays larger than navigation icons leaving small space around the logo. Fill: Logo image fills the height of the navigation bar."
+                  "help": "Logo displays with minimal padding by default. Set to true for logo to fill the nav bar height."
                 },
                 "_hideLogoForMobile": {
                   "type": "boolean",
                   "required": false,
                   "default": false,
-                  "title": "Hide Navigation Logo for mobile view",
+                  "title": "Hide Logo for mobile view",
                   "inputType": "Checkbox",
                   "validators": [],
                   "help": "Useful to declutter the navigation bar for mobile view where limited space is available."
