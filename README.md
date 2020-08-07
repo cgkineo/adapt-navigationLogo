@@ -1,6 +1,6 @@
 # adapt-navigationLogo
 
-Displays an image in the course navigation bar. Image can be configured to utilise three different sizings (small, large, and fill), whether the image should display on small screens, and if the image should be shown on a small screen whether an alternative, more mobile friendly, version should be used.
+Displays an image in the course navigation bar. Image displays with minimal padding by default or can be configured to fill the navigation bar height. Other options include whether an alternative, more mobile friendly, version should be used. Or hide the image for mobile view.
 
 AT Compatible.
 
