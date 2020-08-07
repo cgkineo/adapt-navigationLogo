@@ -52,7 +52,7 @@
                       "type": "string",
                       "required": false,
                       "default": "",
-                      "title": "Logo image alternative Text",
+                      "title": "Logo image alternative text",
                       "inputType": "Text",
                       "validators": [],
                       "help": "The alternative text for this image.",
