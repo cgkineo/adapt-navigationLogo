@@ -64,7 +64,7 @@
                   "type": "boolean",
                   "required": false,
                   "default": false,
-                  "title": "Logo fills the nav bar height",
+                  "title": "Make logo fill navigation bar height",
                   "inputType": "Checkbox",
                   "validators": [],
                   "help": "Logo displays with minimal padding by default. Set to true for logo to fill the nav bar height."
