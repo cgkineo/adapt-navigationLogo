@@ -20,7 +20,7 @@
                   "type": "boolean",
                   "required": false,
                   "default": false,
-                  "title": "Enable Navigation Logo?",
+                  "title": "Add logo to navigation bar",
                   "inputType": "Checkbox",
                   "validators": [],
                   "help": "Set to true to enable the 'Navigation Logo' feature."
