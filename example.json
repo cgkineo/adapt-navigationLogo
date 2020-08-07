@@ -1,8 +1,11 @@
-//course.json
+    // course.json
     "_navigationLogo": {
         "_isEnabled": true,
         "_graphic": {
-            "src": "",
-            "alt": "Company Logo"
-        }
+            "src": "assets/example.png",
+            "_mobileSrc": "",
+            "alt": ""
+        },
+        "_fillNavHeight": false,
+        "_hideLogoForMobile": true
     }

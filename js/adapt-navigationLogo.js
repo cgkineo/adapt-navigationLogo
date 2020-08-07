@@ -21,7 +21,6 @@ define([
 
       var selector = ".js-nav-back-btn";
       this.logoView.$el.insertAfter($(selector));
-
     }
 
   });

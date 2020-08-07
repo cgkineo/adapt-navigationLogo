@@ -1,10 +1,17 @@
-
 .navigation-logo {
   .u-float-left;
-  height: @icon-size + (@icon-padding * 2);
-  padding: @icon-padding;
+
+  // default display
+  &__inner:not(.is-fill) {
+    padding: @icon-padding / 2;
+  }
 
   &__image {
-    height: @icon-size;
+    height: @icon-size + @icon-padding;
+  }
+
+  // fill nav height display
+  .is-fill &__image {
+    height: @icon-size + (@icon-padding * 2);
   }
 }
