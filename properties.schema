@@ -73,7 +73,7 @@
                   "type": "boolean",
                   "required": false,
                   "default": false,
-                  "title": "Hide Logo for mobile view",
+                  "title": "Hide logo for mobile view",
                   "inputType": "Checkbox",
                   "validators": [],
                   "help": "Useful to declutter the navigation bar for mobile view where limited space is available."
