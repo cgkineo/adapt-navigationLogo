@@ -55,7 +55,7 @@
                       "title": "Logo image alternative text",
                       "inputType": "Text",
                       "validators": [],
-                      "help": "The alternative text for this image.",
+                      "help": "Provide alternative text for the image, such as your company name. This text is not a visible element. It is utilized by assistive technology such as screen readers. Avoid identifying the logo as actually being a logo.",
                       "translatable": true
                     }
                   }
