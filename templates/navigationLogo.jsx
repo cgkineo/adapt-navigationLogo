@@ -17,8 +17,8 @@ export default function NavigationLogo(props) {
       <img
         className='navigation-logo__image'
         src={_graphic.src}
-        aria-label={_graphic.alt ? _graphic.alt : null}
-        aria-hidden={!_graphic.alt}
+        aria-label={_graphic.alt || null}
+        aria-hidden={!_graphic.alt || null}
       />
 
     </div>
