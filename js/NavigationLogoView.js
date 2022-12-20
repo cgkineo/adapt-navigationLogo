@@ -14,12 +14,12 @@ export default class NavigationLogoView extends Backbone.View {
     this.render();
   }
 
-  onDeviceResize() {
-    this.render();
-  }
-
   postRender() {
     this.listenTo(Adapt, 'device:changed', this.onDeviceResize);
+  }
+
+  onDeviceResize() {
+    this.render();
   }
 
   setIsDeviceSmall() {
