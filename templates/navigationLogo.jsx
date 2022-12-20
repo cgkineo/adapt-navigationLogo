@@ -4,23 +4,27 @@ import { classes } from 'core/js/reactHelpers';
 export default function NavigationLogo(props) {
   const {
     _graphic,
-    _fillNavHeight
+    src,
+    _fillNavHeight,
+    _hideLogoForMobile,
+    _isDeviceSmall
   } = props;
 
   return (
 
-    <div className={classes([
-      'navigation-logo__inner',
-      _fillNavHeight && 'is-fill'
-    ])}>
-
+    <div
+      className={classes([
+        'navigation-logo__inner',
+        _fillNavHeight && 'is-fill',
+        (_isDeviceSmall && _hideLogoForMobile) && 'u-display-none'
+      ])}
+      aria-hidden={!_graphic.alt || null}
+    >
       <img
         className='navigation-logo__image'
-        src={_graphic.src}
+        src={src}
         aria-label={_graphic.alt || null}
-        aria-hidden={!_graphic.alt || null}
       />
-
     </div>
 
   );

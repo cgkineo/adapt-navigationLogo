@@ -12,35 +12,32 @@ export default class NavigationLogoView extends Backbone.View {
 
   initialize() {
     this.render();
-    this.listenTo(Adapt, 'device:changed', this.onDeviceResize);
   }
 
   onDeviceResize() {
-    this.postRender();
+    this.render();
   }
 
   postRender() {
+    this.listenTo(Adapt, 'device:changed', this.onDeviceResize);
+  }
+
+  setIsDeviceSmall() {
+    this.model.set('_isDeviceSmall', device.screenSize === 'small');
+  }
+
+  setLogoImageSrc() {
     const config = this.model.get('_graphic');
-    if (this.model.get('_hideLogoForMobile')) {
-      this.hideLogoForMobile();
-    }
-    if (config && config._mobileSrc) {
-      this.setLogoImageSrc(config);
-    }
-  }
+    const mobileSrc = config._mobileSrc || config.src;
+    const src = device.screenSize === 'small' ? mobileSrc : config.src;
 
-  hideLogoForMobile() {
-    const isDeviceSmall = device.screenSize === 'small';
-    $('.navigation-logo__image').toggleClass('u-display-none', isDeviceSmall);
-  }
-
-  setLogoImageSrc(config) {
-    const src = device.screenSize === 'small' ? config._mobileSrc : config.src;
-
-    $('.navigation-logo__image').attr('src', src);
+    this.model.set('src', src);
   }
 
   render() {
+    this.setIsDeviceSmall();
+    this.setLogoImageSrc();
+
     ReactDOM.render(<templates.navigationLogo {...this.model.toJSON()} />, this.el);
 
     _.defer(this.postRender.bind(this));
