@@ -19,7 +19,6 @@ class NavigationLogo extends Backbone.Controller {
     const selector = '.js-nav-back-btn';
     this.logoView.$el.insertAfter($(selector));
   }
-
 };
 
 export default new NavigationLogo();
