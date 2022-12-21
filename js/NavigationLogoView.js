@@ -24,9 +24,10 @@ class NavigationLogoView extends AdaptView {
 
   setLogoImageSrc() {
     const config = this.model.get('_graphic');
-    const mobileSrc = config._mobileSrc || config.src;
+    if (!config._mobileSrc) return;
+
     const isDeviceSmall = this.model.get('_isDeviceSmall');
-    const src = isDeviceSmall ? mobileSrc : config.src;
+    const src = isDeviceSmall ? config._mobileSrc : config.src;
 
     this.model.set('src', src);
   }
