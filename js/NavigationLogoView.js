@@ -1,21 +1,30 @@
 import Adapt from 'core/js/adapt';
-import AdaptView from 'core/js/views/adaptView';
 import device from 'core/js/device';
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { templates } from 'core/js/reactHelpers';
 
-class NavigationLogoView extends AdaptView {
+class NavigationLogoView extends Backbone.View {
 
   className() {
     return 'navigation-logo';
   }
 
-  postRender() {
-    this.checkMobile();
-    this.listenTo(Adapt, 'device:changed', this.checkMobile);
+  initialize() {
+    this.listenTo(Adapt, 'device:changed', this.changed);
+
+    this.render();
   }
 
-  checkMobile() {
+  render() {
+    this.changed();
+  }
+
+  changed() {
     this.setIsDeviceSmall();
     this.setLogoImageSrc();
+
+    ReactDOM.render(<templates.navigationLogo {...this.model.toJSON()} />, this.el);
   }
 
   setIsDeviceSmall() {
