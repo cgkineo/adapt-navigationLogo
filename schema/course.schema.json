@@ -1,5 +1,5 @@
 {
-  "$anchor": "navigationLogo-course",
+  "$anchor": "_navigationLogo-course",
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "type": "object",
   "$patch": {
@@ -12,17 +12,15 @@
           "type": "object",
           "default": {},
           "properties": {
-            "_navigationLogo": {
+            "__navigationLogo": {
               "type": "object",
               "default": {},
-              "required": ["_navOrder"],
               "properties": {
                 "_navOrder": {
                   "type": "number",
                   "title": "Navigation bar order",
                   "default": 1,
-                  "inputType": "Text",
-                  "validators": []
+                  "_backboneForms": "Text"
                 }
               }
             }
@@ -35,61 +33,56 @@
           "properties": {
             "_isEnabled": {
               "type": "boolean",
-              "title": "Enable Navigation Logo",
-              "default": true
+              "title": "Add logo to navigation bar",
+              "default": false
             },
             "_graphic": {
               "type": "object",
-              "required": true,
               "title": "Logo image",
+              "default": {},
               "properties": {
                 "src": {
                   "type": "string",
-                  "required": false,
-                  "default": "",
+                  "isObjectId": true,
                   "title": "Image",
-                  "inputType": "Asset:image",
-                  "validators": [],
-                  "help": "The provided logo must be 24px high minimum."
+                  "description": "The provided logo must be 24px high minimum.",
+                  "_backboneForms": {
+                    "type": "Asset",
+                    "media": "image"
+                  }
                 },
                 "_mobileSrc": {
                   "type": "string",
-                  "required": false,
-                  "default": "",
+                  "isObjectId": true,
                   "title": "Optional mobile image",
-                  "inputType": "Asset:image",
-                  "validators": [],
-                  "help": "Useful for displaying a smaller logo for mobile view. The provided logo must be 24px high minimum."
+                  "description": "Useful for displaying a smaller logo for mobile view. The provided logo must be 24px high minimum.",
+                  "_backboneForms": {
+                    "type": "Asset",
+                    "media": "image"
+                  }
                 },
                 "alt": {
                   "type": "string",
-                  "required": false,
-                  "default": "",
                   "title": "Logo image alternative text",
-                  "inputType": "Text",
-                  "validators": [],
-                  "help": "Provide alternative text for the image, such as your company name. This text is not a visible element. It is utilized by assistive technology such as screen readers. Avoid identifying the logo as actually being a logo.",
-                  "translatable": true
+                  "description": "Provide alternative text for the image, such as your company name. This text is not a visible element. It is utilized by assistive technology such as screen readers. Avoid identifying the logo as actually being a logo.",
+                  "default": "",
+                  "_adapt": {
+                    "translatable": true
+                  }
                 }
               }
             },
             "_fillNavHeight": {
               "type": "boolean",
-              "required": false,
-              "default": false,
               "title": "Make logo fill navigation bar height",
-              "inputType": "Checkbox",
-              "validators": [],
-              "help": "Logo displays with minimal padding by default. Set to true for logo to fill the nav bar height."
+              "description": "Logo displays with minimal padding by default. Set to true for logo to fill the nav bar height.",
+              "default": false
             },
             "_hideLogoForMobile": {
               "type": "boolean",
-              "required": false,
-              "default": false,
               "title": "Hide logo for mobile view",
-              "inputType": "Checkbox",
-              "validators": [],
-              "help": "Useful to declutter the navigation bar for mobile view where limited space is available."
+              "description": "Useful to declutter the navigation bar for mobile view where limited space is available.",
+              "default": false
             }
           }
         }
