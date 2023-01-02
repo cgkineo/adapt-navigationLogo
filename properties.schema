@@ -3,6 +3,16 @@
   "$schema": "http://json-schema.org/draft-04/schema",
   "id": "http://jsonschema.net",
   "required":false,
+  "globals": {
+    "_navOrder": {
+      "type": "number",
+      "required": true,
+      "title": "Navigation bar order",
+      "default": 1,
+      "inputType": "Text",
+      "validators": []
+    }
+  },
   "properties": {
     "pluginLocations": {
       "type": "object",
