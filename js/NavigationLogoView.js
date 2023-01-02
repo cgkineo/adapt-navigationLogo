@@ -59,6 +59,4 @@ class NavigationLogoView extends Backbone.View {
   }
 };
 
-NavigationLogoView.template = 'navigationLogo.jsx';
-
 export default NavigationLogoView;
