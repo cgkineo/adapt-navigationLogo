@@ -12,9 +12,10 @@
           "type": "object",
           "default": {},
           "properties": {
-            "__navigationLogo": {
+            "_navigationLogo": {
               "type": "object",
               "default": {},
+              "required": ["_navOrder"],
               "properties": {
                 "_navOrder": {
                   "type": "number",
