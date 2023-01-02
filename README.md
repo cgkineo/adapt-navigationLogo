@@ -1,12 +1,10 @@
 # adapt-navigationLogo
 
-Displays an image in the course navigation bar. Image displays with minimal padding by default or can be configured to fill the navigation bar height. Other options include whether an alternative, more mobile friendly, version should be used. Or hide the image for mobile view.
-
-AT Compatible.
+**Navigation Logo** is an *extension* for displaying an image in the course navigation bar. Image displays with minimal padding by default or can be configured to fill the navigation bar height. For mobile, an alternative, mobile-friendly image can be specified or the logo can be hidden entirely.
 
 ### Attributes
 
-#### Course
+The following attributes are set within *course.json*.
 
 **\_navigationLogo** (object): The course.json Navigation Logo target attribute object.
 
@@ -35,6 +33,7 @@ No known limitations
 **Version number:**  2.1.0  
 **Framework versions:**  5+  
 **Author / maintainer:** CGKineo  
+**AAT support:** Yes  
 **Accessibility support:** WAI AA  
 **RTL support:** Yes  
 **Cross-platform coverage:** Chrome, Chrome for Android, Firefox (ESR + latest version), Edge, IE11, Safari 12+13 for macOS/iOS/iPadOS, Opera  
