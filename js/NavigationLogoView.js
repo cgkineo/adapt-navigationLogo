@@ -10,6 +10,12 @@ class NavigationLogoView extends Backbone.View {
     return 'navigation-logo';
   }
 
+  attributes() {
+    return {
+      'data-order': (Adapt.course.get('_globals')?._extensions?._navigationLogo?._navOrder || 0)
+    };
+  }
+
   initialize() {
     this.listenTo(Adapt, 'device:changed', this.changed);
     this.render();
