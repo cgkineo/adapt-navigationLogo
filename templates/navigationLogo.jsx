@@ -15,12 +15,12 @@ export default function NavigationLogo(props) {
         'navigation-logo__inner',
         _fillNavHeight && 'is-fill'
       ])}
-      aria-hidden={!_graphic.alt || null}
     >
       <img
         className='navigation-logo__image'
         src={src}
         aria-label={_graphic.alt || null}
+        aria-hidden={!_graphic.alt || null}
       />
     </div>
 
