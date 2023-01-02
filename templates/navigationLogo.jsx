@@ -5,9 +5,7 @@ export default function NavigationLogo(props) {
   const {
     _graphic,
     src,
-    _fillNavHeight,
-    _hideLogoForMobile,
-    _isDeviceSmall
+    _fillNavHeight
   } = props;
 
   return (
@@ -15,8 +13,7 @@ export default function NavigationLogo(props) {
     <div
       className={classes([
         'navigation-logo__inner',
-        _fillNavHeight && 'is-fill',
-        (_isDeviceSmall && _hideLogoForMobile) && 'u-display-none'
+        _fillNavHeight && 'is-fill'
       ])}
       aria-hidden={!_graphic.alt || null}
     >

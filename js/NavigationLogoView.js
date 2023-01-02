@@ -12,7 +12,6 @@ class NavigationLogoView extends Backbone.View {
 
   initialize() {
     this.listenTo(Adapt, 'device:changed', this.changed);
-
     this.render();
   }
 
@@ -23,6 +22,7 @@ class NavigationLogoView extends Backbone.View {
   changed() {
     this.setIsDeviceSmall();
     this.setLogoImageSrc();
+    this.hideForMobile();
 
     ReactDOM.render(<templates.navigationLogo {...this.model.toJSON()} />, this.el);
   }
@@ -35,10 +35,21 @@ class NavigationLogoView extends Backbone.View {
     const config = this.model.get('_graphic');
     if (!config._mobileSrc) return;
 
-    const isDeviceSmall = this.model.get('_isDeviceSmall');
-    const src = isDeviceSmall ? config._mobileSrc : config.src;
+    const _isDeviceSmall = this.model.get('_isDeviceSmall');
+    const src = _isDeviceSmall ? config._mobileSrc : config.src;
 
     this.model.set('src', src);
+  }
+
+  hideForMobile() {
+    const _isDeviceSmall = this.model.get('_isDeviceSmall');
+    const _hideLogoForMobile = this.model.get('_hideLogoForMobile');
+
+    if (_isDeviceSmall && _hideLogoForMobile) {
+      this.$el.addClass('u-display-none');
+    } else {
+      this.$el.removeClass('u-display-none');
+    }
   }
 };
 
