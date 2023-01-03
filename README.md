@@ -1,5 +1,9 @@
 # adapt-navigationLogo
 
+<img src="https://user-images.githubusercontent.com/898168/210416404-8118fd76-83eb-48d1-8cf1-36c7724bb7dd.jpg" alt="Screenshot" width="500">
+
+<br>
+
 **Navigation Logo** is an *extension* for displaying an image in the course navigation bar. Image displays with minimal padding by default or can be configured to fill the navigation bar height. For mobile, an alternative, mobile-friendly image can be specified or the logo can be hidden entirely.
 
 ### Attributes
