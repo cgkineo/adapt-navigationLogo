@@ -38,13 +38,13 @@ class NavigationLogoView extends Backbone.View {
   }
 
   setLogoImageSrc() {
-    const config = this.model.get('_graphic');
-    if (!config._mobileSrc) return;
+    const _graphic = this.model.get('_graphic');
+    this.model.set('src', _graphic.src);
 
     const _isDeviceSmall = this.model.get('_isDeviceSmall');
-    const src = _isDeviceSmall ? config._mobileSrc : config.src;
+    if (!_isDeviceSmall || !_graphic._mobileSrc) return;
 
-    this.model.set('src', src);
+    this.model.set('src', _graphic._mobileSrc);
   }
 
   hideForMobile() {
