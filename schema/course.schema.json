@@ -1,5 +1,5 @@
 {
-  "$anchor": "_navigationLogo-course",
+  "$anchor": "navigationLogo-course",
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "type": "object",
   "$patch": {
@@ -15,7 +15,6 @@
             "_navigationLogo": {
               "type": "object",
               "default": {},
-              "required": ["_navOrder"],
               "properties": {
                 "_navOrder": {
                   "type": "number",
