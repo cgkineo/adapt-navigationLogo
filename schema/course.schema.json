@@ -30,6 +30,9 @@
           "type": "object",
           "title": "Navigation Logo",
           "default": {},
+          "required": [
+            "_graphic"
+          ],
           "properties": {
             "_isEnabled": {
               "type": "boolean",
@@ -39,7 +42,6 @@
             "_graphic": {
               "type": "object",
               "title": "Logo image",
-              "default": {},
               "properties": {
                 "src": {
                   "type": "string",
