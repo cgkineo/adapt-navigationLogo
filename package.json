@@ -1,7 +1,7 @@
 {
   "name": "adapt-navigationLogo",
   "version": "2.1.0",
-  "framework": ">=5",
+  "framework": ">=5.20.0",
   "homepage": "https://github.com/cgkineo/adapt-navigationLogo",
   "bugs": "https://github.com/cgkineo/adapt-navigationLogo/issues",
   "extension": "navigationLogo",

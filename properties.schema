@@ -10,6 +10,7 @@
       "title": "Navigation bar order",
       "default": 1,
       "inputType": "Text",
+      "help": "The order in which the logo should appear in the navigation bar. Lower numbers (ex. 0) position the logo further to the left while higher numbers (ex. 100) do the opposite.",
       "validators": []
     }
   },

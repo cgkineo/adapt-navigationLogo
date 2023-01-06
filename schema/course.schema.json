@@ -19,6 +19,7 @@
                 "_navOrder": {
                   "type": "number",
                   "title": "Navigation bar order",
+                  "description": "The order in which the logo should appear in the navigation bar. Lower numbers (ex. 0) position the logo further to the left while higher numbers (ex. 100) do the opposite.",
                   "default": 1,
                   "_backboneForms": "Text"
                 }
