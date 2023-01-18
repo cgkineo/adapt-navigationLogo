@@ -11,10 +11,10 @@
         "_globals": {
           "type": "object",
           "default": {},
-          "title": "Navigation Logo",
           "properties": {
             "_navigationLogo": {
               "type": "object",
+              "title": "Navigation Logo",
               "default": {},
               "properties": {
                 "_navOrder": {
