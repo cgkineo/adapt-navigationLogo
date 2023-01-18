@@ -11,6 +11,7 @@
         "_globals": {
           "type": "object",
           "default": {},
+          "title": "Navigation Logo",
           "properties": {
             "_navigationLogo": {
               "type": "object",
