@@ -3,6 +3,17 @@
   "$schema": "http://json-schema.org/draft-04/schema",
   "id": "http://jsonschema.net",
   "required":false,
+  "globals": {
+    "_navOrder": {
+      "type": "number",
+      "required": true,
+      "title": "Navigation bar order",
+      "default": 1,
+      "inputType": "Text",
+      "help": "Determines the order in which the object is displayed in the navigation bar. Negative numbers (e.g. -100) are left-aligned. Positive numbers (e.g. 100) are right-aligned.",
+      "validators": []
+    }
+  },
   "properties": {
     "pluginLocations": {
       "type": "object",

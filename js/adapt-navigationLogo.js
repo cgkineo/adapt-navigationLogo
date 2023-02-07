@@ -1,30 +1,24 @@
-define([
-  'core/js/adapt',
-  './LogoView'
-],function(Adapt, LogoView) {
+import Adapt from 'core/js/adapt';
+import NavigationLogoView from './NavigationLogoView';
 
-  var NavigationLogo = Backbone.Controller.extend({
+class NavigationLogo extends Backbone.Controller {
 
-    initialize: function() {
-      this.listenTo(Adapt, "adapt:initialize", this.onDataReady);
-    },
+  initialize() {
+    this.listenTo(Adapt, 'adapt:initialize', this.onDataReady);
+  }
 
-    onDataReady: function() {
-      if (this.logoView) this.logoView.remove();
+  onDataReady() {
+    if (this.logoView) this.logoView.remove();
 
-      var config = Adapt.course.get("_navigationLogo");
-      if (!config || !config._isEnabled) return;
+    const config = Adapt.course.get('_navigationLogo');
+    if (!config || !config._isEnabled) return;
 
-      this.logoView = new LogoView({
-        model: new Backbone.Model(config)
-      });
+    const model = new Backbone.Model(config);
+    this.logoView = new NavigationLogoView({ model });
 
-      var selector = ".js-nav-back-btn";
-      this.logoView.$el.insertAfter($(selector));
-    }
+    const selector = '.js-nav-back-btn';
+    this.logoView.$el.insertAfter($(selector));
+  }
+};
 
-  });
-
-  return new NavigationLogo();
-
-});
+export default new NavigationLogo();
