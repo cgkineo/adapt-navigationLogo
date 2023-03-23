@@ -6,11 +6,11 @@
 
 ## Settings overview
 
-The image displays with minimal padding by default or can be configured to fill the navigation bar height. For mobile, an alternative, mobile-friendly image can be specified or the logo can be hidden entirely.
+The image displays with minimal padding by default or can be configured to fill the navigation bar height. For mobile, an alternative, mobile-friendly image can be specified or the logo can be hidden entirely. The logo can be shown on the menu, on specific pages, or everywhere.
 
 ## Attributes
 
-The following attributes are set within *course.json*.
+The following attributes are set within *course.json* or *contentObjects.json*.
 
 ### **\_navigationLogo** (object):
 The object that defines the content to render. It contains the following settings:
@@ -40,7 +40,6 @@ Optional, hide logo for mobile view. Useful to declutter the navigation bar wher
 Remember to include an `alt` attribute. Screen readers will read aloud alt text content, so leave the alt text empty (`"alt": ""`) if the logo is repeated in the course title.
 
 ----------------------------
-**Version number:**  2.1.0<br>
 **Framework versions:**  5.24.4+<br>
 **Author / maintainer:** CGKineo<br>
 **AAT support:** Yes<br>

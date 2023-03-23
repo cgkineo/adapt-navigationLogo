@@ -1,0 +1,74 @@
+{
+  "$anchor": "navigationLogo-contentobject",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "$patch": {
+    "source": {
+      "$ref": "contentobject"
+    },
+    "with": {
+      "properties": {
+        "_navigationLogo": {
+          "type": "object",
+          "title": "Navigation Logo",
+          "default": {},
+          "required": [],
+          "properties": {
+            "_isEnabled": {
+              "type": "boolean",
+              "title": "Add logo to navigation bar",
+              "default": false
+            },
+            "_graphic": {
+              "type": "object",
+              "title": "Logo image",
+              "properties": {
+                "src": {
+                  "type": "string",
+                  "isObjectId": true,
+                  "title": "Image",
+                  "description": "The provided logo must be 24px high minimum.",
+                  "_backboneForms": {
+                    "type": "Asset",
+                    "media": "image"
+                  }
+                },
+                "_mobileSrc": {
+                  "type": "string",
+                  "isObjectId": true,
+                  "title": "Optional mobile image",
+                  "description": "Useful for displaying a smaller logo for mobile view. The provided logo must be 24px high minimum.",
+                  "_backboneForms": {
+                    "type": "Asset",
+                    "media": "image"
+                  }
+                },
+                "alt": {
+                  "type": "string",
+                  "title": "Logo image alternative text",
+                  "description": "Provide alternative text for the image, such as your company name. This text is not a visible element. It is utilized by assistive technology such as screen readers. Avoid identifying the logo as actually being a logo.",
+                  "default": "",
+                  "_adapt": {
+                    "translatable": true
+                  }
+                }
+              }
+            },
+            "_fillNavHeight": {
+              "type": "boolean",
+              "title": "Make logo fill navigation bar height",
+              "description": "Logo displays with minimal padding by default. Set to true for logo to fill the nav bar height.",
+              "default": false
+            },
+            "_hideLogoForMobile": {
+              "type": "boolean",
+              "title": "Hide logo for mobile view",
+              "description": "Useful to declutter the navigation bar for mobile view where limited space is available.",
+              "default": false
+            }
+          }
+        }
+      }
+    }
+  }
+}
