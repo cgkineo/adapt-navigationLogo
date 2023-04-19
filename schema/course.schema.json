@@ -41,6 +41,11 @@
               "title": "Add logo to navigation bar",
               "default": false
             },
+            "_isHidden": {
+              "type": "boolean",
+              "title": "Hide the logo on the menu",
+              "default": false
+            },
             "_graphic": {
               "type": "object",
               "title": "Logo image",

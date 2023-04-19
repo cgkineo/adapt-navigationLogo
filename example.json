@@ -1,6 +1,14 @@
-// course.json or contentObjects.json
+// course.json
+"_globals": {
+    "_extensions": {
+        "_navigationLogo": {
+            "_navOrder": 1
+        }
+    }
+}
 "_navigationLogo": {
     "_isEnabled": true,
+    "_isHidden": false,
     "_graphic": {
         "src": "assets/example.png",
         "_mobileSrc": "",
@@ -10,10 +18,7 @@
     "_hideLogoForMobile": true
 }
 
-"_globals": {
-    "_extensions": {
-        "_navigationLogo": {
-            "_navOrder": 1
-        }
-    }
+// contentObjects.json
+"_navigationLogo": {
+    "_isHidden": false
 }

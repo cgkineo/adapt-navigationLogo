@@ -10,13 +10,16 @@ The image displays with minimal padding by default or can be configured to fill 
 
 ## Attributes
 
-The following attributes are set within *course.json* or *contentObjects.json*.
+The following attributes are set within *course.json*.
 
 ### **\_navigationLogo** (object):
 The object that defines the content to render. It contains the following settings:
 
 ### **\_isEnabled** (boolean):
 Turns on and off the **Navigation Logo** extension.
+
+### **\_isHidden** (boolean):
+When `true`, hides the logo on the main menu. Default: `false`
 
 ### **\_graphic** (object):
 The graphic object that defines the image which is rendered. The assumed use case for this image is to display a client's logo. It contains the following settings:
@@ -35,6 +38,11 @@ Default: `false` where the image is displayed with minimal padding. Set to `true
 
 ### **\_hideLogoForMobile** (boolean):
 Optional, hide logo for mobile view. Useful to declutter the navigation bar where limited space is available.
+
+The following attributes are set within *contentObjects.json*.
+
+### **\_isHidden** (boolean):
+When `true`, hides the logo on a specific page or sub menu. Default: `false`
 
 ## Accessibility
 Remember to include an `alt` attribute. Screen readers will read aloud alt text content, so leave the alt text empty (`"alt": ""`) if the logo is repeated in the course title.
