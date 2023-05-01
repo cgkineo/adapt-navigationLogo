@@ -27,8 +27,8 @@ class NavigationLogoView extends Backbone.View {
 
   changed() {
     this.setIsDeviceSmall();
-    this.setLogoImageSrc();
-    this.setLogoImageAlt();
+    this.setLogoSrc();
+    this.setLogoAlt();
     this.hideForMobile();
 
     ReactDOM.render(<templates.navigationLogo {...this.model.toJSON()} />, this.el);
@@ -38,7 +38,7 @@ class NavigationLogoView extends Backbone.View {
     this.model.set('_isDeviceSmall', device.screenSize === 'small');
   }
 
-  setLogoImageSrc() {
+  setLogoSrc() {
     let src;
 
     // Course config
@@ -62,7 +62,7 @@ class NavigationLogoView extends Backbone.View {
     this.model.set('src', graphic._mobileSrc);
   }
 
-  setLogoImageAlt() {
+  setLogoAlt() {
     let alt;
 
     // Course config
