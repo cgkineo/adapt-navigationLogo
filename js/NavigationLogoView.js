@@ -39,44 +39,27 @@ class NavigationLogoView extends Backbone.View {
   }
 
   setLogoSrc() {
-    let src;
-
     // Course config
     const courseConfig = Adapt.course.get('_navigationLogo');
-    if (courseConfig?._graphic?._src) {
-      src = courseConfig._graphic._src;
-    }
+    if (!courseConfig?._graphic?._src) return;
 
-    // Allow override per content object
-    const thisConfig = this.model.get('_navigationLogo');
-    if (thisConfig?._graphic?._src) {
-      src = this.model.get('_graphic')._src;
-    }
-
+    const src = courseConfig._graphic._src;
     this.model.set('src', src);
 
     // Check for mobile graphic
     const _isDeviceSmall = this.model.get('_isDeviceSmall');
-    if (!_isDeviceSmall || !graphic._mobileSrc) return;
+    if (!_isDeviceSmall || !courseConfig._graphic?._mobileSrc) return;
 
-    this.model.set('src', graphic._mobileSrc);
+    const mobileSrc = courseConfig._graphic._mobileSrc;
+    this.model.set('src', mobileSrc);
   }
 
   setLogoAlt() {
-    let alt;
-
     // Course config
     const courseConfig = Adapt.course.get('_navigationLogo');
-    if (courseConfig?._graphic?.alt) {
-      alt = courseConfig._graphic.alt;
-    }
+    if (!courseConfig?._graphic?.alt) return;
 
-    // Allow override per content object
-    const thisConfig = this.model.get('_navigationLogo');
-    if (thisConfig?._graphic?.alt) {
-      alt = this.model.get('_graphic').alt;
-    }
-
+    const alt = courseConfig._graphic.alt;
     this.model.set('alt', alt);
   }
 
