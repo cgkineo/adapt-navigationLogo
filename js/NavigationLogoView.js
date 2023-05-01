@@ -28,6 +28,7 @@ class NavigationLogoView extends Backbone.View {
   changed() {
     this.setIsDeviceSmall();
     this.setLogoImageSrc();
+    this.setLogoImageAlt();
     this.hideForMobile();
 
     ReactDOM.render(<templates.navigationLogo {...this.model.toJSON()} />, this.el);
@@ -38,13 +39,45 @@ class NavigationLogoView extends Backbone.View {
   }
 
   setLogoImageSrc() {
-    const _graphic = this.model.get('_graphic');
-    this.model.set('src', _graphic.src);
+    let src;
 
+    // Course config
+    const courseConfig = Adapt.course.get('_navigationLogo');
+    if (courseConfig?._graphic?._src) {
+      src = courseConfig._graphic._src;
+    }
+
+    // Allow override per content object
+    const thisConfig = this.model.get('_navigationLogo');
+    if (thisConfig?._graphic?._src) {
+      src = this.model.get('_graphic')._src;
+    }
+
+    this.model.set('src', src);
+
+    // Check for mobile graphic
     const _isDeviceSmall = this.model.get('_isDeviceSmall');
-    if (!_isDeviceSmall || !_graphic._mobileSrc) return;
+    if (!_isDeviceSmall || !graphic._mobileSrc) return;
 
-    this.model.set('src', _graphic._mobileSrc);
+    this.model.set('src', graphic._mobileSrc);
+  }
+
+  setLogoImageAlt() {
+    let alt;
+
+    // Course config
+    const courseConfig = Adapt.course.get('_navigationLogo');
+    if (courseConfig?._graphic?.alt) {
+      alt = courseConfig._graphic.alt;
+    }
+
+    // Allow override per content object
+    const thisConfig = this.model.get('_navigationLogo');
+    if (thisConfig?._graphic?.alt) {
+      alt = this.model.get('_graphic').alt;
+    }
+
+    this.model.set('alt', alt);
   }
 
   hideForMobile() {

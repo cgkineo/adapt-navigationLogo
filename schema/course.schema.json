@@ -38,12 +38,12 @@
           "properties": {
             "_isEnabled": {
               "type": "boolean",
-              "title": "Add logo to navigation bar",
-              "default": false
+              "title": "Show logo on the navigation bar",
+              "default": true
             },
             "_isHidden": {
               "type": "boolean",
-              "title": "Hide the logo on the menu",
+              "title": "Hide the nav logo on the menu",
               "default": false
             },
             "_graphic": {

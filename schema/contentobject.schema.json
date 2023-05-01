@@ -14,10 +14,10 @@
           "default": {},
           "required": [],
           "properties": {
-            "_isHidden": {
+            "_isEnabled": {
               "type": "boolean",
-              "title": "Hide the logo on this page or sub menu",
-              "default": false
+              "title": "Show nav logo on this page / sub menu",
+              "default": true
             }
           }
         }

@@ -13,7 +13,7 @@ class NavigationLogo extends Backbone.Controller {
     if (this.logoView) this.logoView.remove();
 
     const config = view.model.get('_navigationLogo');
-    if (!config || !config._isEnabled) return;
+    if (!config || !config._isEnabled || config._isHidden) return;
 
     const model = new Backbone.Model(config);
     this.logoView = new NavigationLogoView({ model });

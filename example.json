@@ -10,7 +10,7 @@
     "_isEnabled": true,
     "_isHidden": false,
     "_graphic": {
-        "src": "assets/example.png",
+        "_src": "assets/example.png",
         "_mobileSrc": "",
         "alt": ""
     },
@@ -20,5 +20,5 @@
 
 // contentObjects.json
 "_navigationLogo": {
-    "_isHidden": false
+    "_isEnabled": true
 }
