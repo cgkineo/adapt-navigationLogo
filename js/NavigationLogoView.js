@@ -41,9 +41,9 @@ class NavigationLogoView extends Backbone.View {
   setLogoSrc() {
     // Course config
     const courseConfig = Adapt.course.get('_navigationLogo');
-    if (!courseConfig?._graphic?._src) return;
+    if (!courseConfig?._graphic?.src) return;
 
-    const src = courseConfig._graphic._src;
+    const src = courseConfig._graphic.src;
     this.model.set('src', src);
 
     // Check for mobile graphic

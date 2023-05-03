@@ -10,7 +10,7 @@
     "_isEnabled": true,
     "_isHidden": false,
     "_graphic": {
-        "_src": "assets/example.png",
+        "src": "assets/example.png",
         "_mobileSrc": "",
         "alt": ""
     },
