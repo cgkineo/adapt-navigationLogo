@@ -12,17 +12,23 @@
           "type": "object",
           "default": {},
           "properties": {
-            "_navigationLogo": {
+            "_extensions": {
               "type": "object",
-              "title": "Navigation Logo",
               "default": {},
               "properties": {
-                "_navOrder": {
-                  "type": "number",
-                  "title": "Navigation bar order",
-                  "description": "Determines the order in which the object is displayed in the navigation bar. Negative numbers (e.g. -100) are left-aligned. Positive numbers (e.g. 100) are right-aligned.",
-                  "default": 1,
-                  "_backboneForms": "Number"
+                "_navigationLogo": {
+                  "type": "object",
+                  "title": "Navigation Logo",
+                  "default": {},
+                  "properties": {
+                    "_navOrder": {
+                      "type": "number",
+                      "title": "Navigation bar order",
+                      "description": "Determines the order in which the object is displayed in the navigation bar. Negative numbers (e.g. -100) are left-aligned. Positive numbers (e.g. 100) are right-aligned.",
+                      "default": 1,
+                      "_backboneForms": "Number"
+                    }
+                  }
                 }
               }
             }
