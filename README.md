@@ -41,8 +41,11 @@ Optional, hide logo for mobile view. Useful to declutter the navigation bar wher
 
 The following attributes are set within *contentObjects.json*.
 
+### **\_navigationLogo** (object):
+The object that defines the content to render. It contains the following settings:
+
 ### **\_isEnabled** (boolean):
-When `true`, shows the logo on a specific page or sub menu. Default: `true`
+When `false`, hides the logo on a specific page or sub menu. Default: `true`
 
 ## Accessibility
 Remember to include an `alt` attribute. Screen readers will read aloud alt text content, so leave the alt text empty (`"alt": ""`) if the logo is repeated in the course title.
