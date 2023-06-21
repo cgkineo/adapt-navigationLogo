@@ -6,6 +6,7 @@
         }
     }
 }
+// Enable global logo
 "_navigationLogo": {
     "_isEnabled": true,
     "_isHidden": false,
@@ -18,7 +19,7 @@
     "_hideLogoForMobile": true
 }
 
-// contentObjects.json
+// contentObjects.json - Disable for this page
 "_navigationLogo": {
-    "_isEnabled": true
+    "_isEnabled": false
 }

@@ -9,11 +9,18 @@ class NavigationLogo extends Backbone.Controller {
     });
   }
 
+  static get courseConfig() {
+    return Adapt.course.get('_navigationLogo');
+  }
+
   onPostRender(view) {
     if (this.logoView) this.logoView.remove();
 
     const config = view.model.get('_navigationLogo');
-    if (!config || !config._isEnabled || config._isHidden) return;
+    if (
+      (!NavigationLogo.courseConfig || !NavigationLogo.courseConfig._isEnabled) ||
+      (config && (!config._isEnabled || config._isHidden))
+    ) return;
 
     const model = new Backbone.Model(config);
     this.logoView = new NavigationLogoView({ model });
