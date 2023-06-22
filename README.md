@@ -6,7 +6,7 @@
 
 ## Settings overview
 
-The image displays with minimal padding by default or can be configured to fill the navigation bar height. For mobile, an alternative, mobile-friendly image can be specified or the logo can be hidden entirely. The logo can be shown on the menu, on specific pages, or everywhere.
+The image displays with minimal padding by default or can be configured to fill the navigation bar height. For mobile, an alternative, mobile-friendly image can be specified or the logo can be hidden entirely. The logo can be shown on the menu, on specific pages, or everywhere as default.
 
 ## Attributes
 
