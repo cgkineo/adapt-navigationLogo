@@ -30,8 +30,17 @@
                 "_isEnabled": {
                   "type": "boolean",
                   "required": false,
+                  "default": true,
+                  "title": "Show logo on the navigation bar",
+                  "inputType": "Checkbox",
+                  "validators": [],
+                  "help": ""
+                },
+                "_isHidden": {
+                  "type": "boolean",
+                  "required": false,
                   "default": false,
-                  "title": "Add logo to navigation bar",
+                  "title": "Hide the nav logo on the menu",
                   "inputType": "Checkbox",
                   "validators": [],
                   "help": ""
@@ -88,6 +97,27 @@
                   "inputType": "Checkbox",
                   "validators": [],
                   "help": "Useful to declutter the navigation bar for mobile view where limited space is available."
+                }
+              }
+            }
+          }
+        },
+        "contentobject": {
+          "type": "object",
+          "properties": {
+            "_navigationLogo": {
+              "type": "object",
+              "required": false,
+              "legend": "Navigation Logo",
+              "properties": {
+                "_isEnabled": {
+                  "type": "boolean",
+                  "required": false,
+                  "default": true,
+                  "title": "Show nav logo on this page / sub menu",
+                  "inputType": "Checkbox",
+                  "validators": [],
+                  "help": ""
                 }
               }
             }

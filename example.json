@@ -1,6 +1,15 @@
 // course.json
+"_globals": {
+    "_extensions": {
+        "_navigationLogo": {
+            "_navOrder": 1
+        }
+    }
+}
+// Enable global logo
 "_navigationLogo": {
     "_isEnabled": true,
+    "_isHidden": false,
     "_graphic": {
         "src": "assets/example.png",
         "_mobileSrc": "",
@@ -10,10 +19,7 @@
     "_hideLogoForMobile": true
 }
 
-"_globals": {
-    "_extensions": {
-        "_navigationLogo": {
-            "_navOrder": 1
-        }
-    }
+// contentObjects.json - Disable for this page
+"_navigationLogo": {
+    "_isEnabled": false
 }

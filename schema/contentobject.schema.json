@@ -1,0 +1,27 @@
+{
+  "$anchor": "navigationLogo-contentobject",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "$patch": {
+    "source": {
+      "$ref": "contentobject"
+    },
+    "with": {
+      "properties": {
+        "_navigationLogo": {
+          "type": "object",
+          "title": "Navigation Logo",
+          "default": {},
+          "required": [],
+          "properties": {
+            "_isEnabled": {
+              "type": "boolean",
+              "title": "Show nav logo on this page / sub menu",
+              "default": true
+            }
+          }
+        }
+      }
+    }
+  }
+}

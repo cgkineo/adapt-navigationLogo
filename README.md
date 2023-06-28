@@ -6,7 +6,7 @@
 
 ## Settings overview
 
-The image displays with minimal padding by default or can be configured to fill the navigation bar height. For mobile, an alternative, mobile-friendly image can be specified or the logo can be hidden entirely.
+The image displays with minimal padding by default or can be configured to fill the navigation bar height. For mobile, an alternative, mobile-friendly image can be specified or the logo can be hidden entirely. The logo can be shown on the menu, on specific pages, or everywhere as default.
 
 ## Attributes
 
@@ -17,6 +17,9 @@ The object that defines the content to render. It contains the following setting
 
 ### **\_isEnabled** (boolean):
 Turns on and off the **Navigation Logo** extension.
+
+### **\_isHidden** (boolean):
+When `true`, hides the logo on the main menu. Default: `false`
 
 ### **\_graphic** (object):
 The graphic object that defines the image which is rendered. The assumed use case for this image is to display a client's logo. It contains the following settings:
@@ -36,11 +39,18 @@ Default: `false` where the image is displayed with minimal padding. Set to `true
 ### **\_hideLogoForMobile** (boolean):
 Optional, hide logo for mobile view. Useful to declutter the navigation bar where limited space is available.
 
+The following attributes are set within *contentObjects.json*.
+
+### **\_navigationLogo** (object):
+The object that defines the content to render. It contains the following settings:
+
+### **\_isEnabled** (boolean):
+When `false`, hides the logo on a specific page or sub menu. Default: `true`
+
 ## Accessibility
 Remember to include an `alt` attribute. Screen readers will read aloud alt text content, so leave the alt text empty (`"alt": ""`) if the logo is repeated in the course title.
 
 ----------------------------
-**Version number:**  2.1.0<br>
 **Framework versions:**  5.24.4+<br>
 **Author / maintainer:** CGKineo<br>
 **AAT support:** Yes<br>

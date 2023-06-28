@@ -3,8 +3,8 @@ import { classes } from 'core/js/reactHelpers';
 
 export default function NavigationLogo(props) {
   const {
-    _graphic,
     src,
+    alt,
     _fillNavHeight
   } = props;
 
@@ -19,8 +19,8 @@ export default function NavigationLogo(props) {
       <img
         className='navigation-logo__image'
         src={src}
-        aria-label={_graphic.alt || null}
-        aria-hidden={!_graphic.alt || null}
+        aria-label={alt || null}
+        aria-hidden={!alt || null}
       />
     </div>
 

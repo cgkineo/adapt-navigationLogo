@@ -4,14 +4,23 @@ import NavigationLogoView from './NavigationLogoView';
 class NavigationLogo extends Backbone.Controller {
 
   initialize() {
-    this.listenTo(Adapt, 'adapt:initialize', this.onDataReady);
+    this.listenTo(Adapt, {
+      'menuView:postRender pageView:postRender': this.onPostRender
+    });
   }
 
-  onDataReady() {
+  static get courseConfig() {
+    return Adapt.course.get('_navigationLogo');
+  }
+
+  onPostRender(view) {
     if (this.logoView) this.logoView.remove();
 
-    const config = Adapt.course.get('_navigationLogo');
-    if (!config || !config._isEnabled) return;
+    const config = view.model.get('_navigationLogo');
+    if (
+      (!NavigationLogo.courseConfig || !NavigationLogo.courseConfig._isEnabled) ||
+      (config && (!config._isEnabled || config._isHidden))
+    ) return;
 
     const model = new Backbone.Model(config);
     this.logoView = new NavigationLogoView({ model });
