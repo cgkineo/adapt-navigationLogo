@@ -9,7 +9,7 @@
 // Enable global logo
 "_navigationLogo": {
     "_isEnabled": true,
-    "_isHidden": false,
+    "_isHiddenOnMenu": false,
     "_graphic": {
         "src": "assets/example.png",
         "_mobileSrc": "",

@@ -19,7 +19,7 @@ class NavigationLogo extends Backbone.Controller {
     const config = view.model.get('_navigationLogo');
     if (
       (!NavigationLogo.courseConfig || !NavigationLogo.courseConfig._isEnabled) ||
-      (config && (!config._isEnabled || config._isHidden))
+      (config && (!config._isEnabled || config._isHiddenOnMenu))
     ) return;
 
     const model = new Backbone.Model(config);

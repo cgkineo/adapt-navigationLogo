@@ -47,7 +47,7 @@
               "title": "Show logo on the navigation bar",
               "default": true
             },
-            "_isHidden": {
+            "_isHiddenOnMenu": {
               "type": "boolean",
               "title": "Hide the nav logo on the menu",
               "default": false
