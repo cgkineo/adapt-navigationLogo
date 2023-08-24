@@ -18,7 +18,7 @@ The object that defines the content to render. It contains the following setting
 ### **\_isEnabled** (boolean):
 Turns on and off the **Navigation Logo** extension.
 
-### **\_isHidden** (boolean):
+### **\_isHiddenOnMenu** (boolean):
 When `true`, hides the logo on the main menu. Default: `false`
 
 ### **\_graphic** (object):
