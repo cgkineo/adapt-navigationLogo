@@ -65,7 +65,9 @@ class NavigationLogoView extends Backbone.View {
 
   hideForMobile() {
     const _isDeviceSmall = this.model.get('_isDeviceSmall');
-    const _hideLogoForMobile = this.model.get('_hideLogoForMobile');
+
+    const courseConfig = Adapt.course.get('_navigationLogo');
+    const _hideLogoForMobile = courseConfig._hideLogoForMobile;
 
     if (_isDeviceSmall && _hideLogoForMobile) {
       this.$el.addClass('u-display-none');
