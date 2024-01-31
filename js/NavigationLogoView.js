@@ -21,6 +21,10 @@ class NavigationLogoView extends Backbone.View {
     this.render();
   }
 
+  static get courseConfig() {
+    return Adapt.course.get('_navigationLogo');
+  }
+
   render() {
     this.changed();
   }
@@ -39,35 +43,29 @@ class NavigationLogoView extends Backbone.View {
   }
 
   setLogoSrc() {
-    // Course config
-    const courseConfig = Adapt.course.get('_navigationLogo');
-    if (!courseConfig?._graphic?.src) return;
+    if (!NavigationLogoView.courseConfig ?._graphic?.src) return;
 
-    const src = courseConfig._graphic.src;
+    const src = NavigationLogoView.courseConfig._graphic.src;
     this.model.set('src', src);
 
     // Check for mobile graphic
     const _isDeviceSmall = this.model.get('_isDeviceSmall');
-    if (!_isDeviceSmall || !courseConfig._graphic?._mobileSrc) return;
+    if (!_isDeviceSmall || !NavigationLogoView.courseConfig._graphic?._mobileSrc) return;
 
-    const mobileSrc = courseConfig._graphic._mobileSrc;
+    const mobileSrc = NavigationLogoView.courseConfig._graphic._mobileSrc;
     this.model.set('src', mobileSrc);
   }
 
   setLogoAlt() {
-    // Course config
-    const courseConfig = Adapt.course.get('_navigationLogo');
-    if (!courseConfig?._graphic?.alt) return;
+    if (!NavigationLogoView.courseConfig?._graphic?.alt) return;
 
-    const alt = courseConfig._graphic.alt;
+    const alt = NavigationLogoView.courseConfig._graphic.alt;
     this.model.set('alt', alt);
   }
 
   hideForMobile() {
     const _isDeviceSmall = this.model.get('_isDeviceSmall');
-
-    const courseConfig = Adapt.course.get('_navigationLogo');
-    const _hideLogoForMobile = courseConfig._hideLogoForMobile;
+    const _hideLogoForMobile = NavigationLogoView.courseConfig._hideLogoForMobile;
 
     if (_isDeviceSmall && _hideLogoForMobile) {
       this.$el.addClass('u-display-none');
