@@ -23,6 +23,7 @@ class NavigationLogo extends Backbone.Controller {
     ) return;
 
     const model = new Backbone.Model(config);
+    model.set('_fillNavHeight', NavigationLogo.courseConfig._fillNavHeight);
     this.logoView = new NavigationLogoView({ model });
 
     const selector = '.js-nav-back-btn';
