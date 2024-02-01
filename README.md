@@ -51,9 +51,8 @@ When `false`, hides the logo on a specific page or sub menu. Default: `true`
 Remember to include an `alt` attribute. Screen readers will read aloud alt text content, so leave the alt text empty (`"alt": ""`) if the logo is repeated in the course title.
 
 ----------------------------
-**Framework versions:**  5.24.4+<br>
 **Author / maintainer:** CGKineo<br>
 **AAT support:** Yes<br>
 **Accessibility support:** WAI AA<br>
 **RTL support:** Yes<br>
-**Cross-platform coverage:** Chrome, Chrome for Android, Firefox (ESR + latest version), Edge, IE11, Safari 12+13 for macOS/iOS/iPadOS, Opera<br>
+**Cross-platform coverage:** Chrome, Chrome for Android, Firefox (ESR + latest version), Edge, Safari for macOS/iOS/iPadOS, Opera<br>
