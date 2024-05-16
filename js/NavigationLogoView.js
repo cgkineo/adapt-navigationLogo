@@ -1,6 +1,7 @@
 import Adapt from 'core/js/adapt';
 import data from 'core/js/data';
 import device from 'core/js/device';
+import location from 'core/js/location';
 import router from 'core/js/router';
 import React from 'react';
 import ReactDOM from 'react-dom';
@@ -99,12 +100,15 @@ class NavigationLogoView extends Backbone.View {
     const model = data.findById(redirectToId);
     if (!model) return;
 
+    const currentLocation = location._currentId;
     switch (model.get('_type')) {
       case 'course':
+        if (currentLocation === 'course') return;
         router.navigateToHomeRoute();
         break;
       case 'menu':
       case 'page':
+        if (currentLocation === model.get('_id')) return;
         router.navigateToElement(model.get('_id'));
         break;
     }
