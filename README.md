@@ -40,6 +40,10 @@ Optional, file name (including path) of the image. Used to display an alternativ
 
 This text becomes the image’s [alt](https://github.com/adaptlearning/adapt_framework/wiki/Providing-good-alt-text) attribute.
 
+#### **_routeToLocation** (string)
+
+When set to a valid Adapt element, the logo image will link to the specified location. Valid values include a page (e.g. `co-100`) or a menu (e.g. `course`)
+
 #### **\_fillNavHeight** (boolean)
 
 Default: `false` where the image is displayed with minimal padding. Set to `true` for the image to fill the nav bar height.

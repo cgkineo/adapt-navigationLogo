@@ -1,5 +1,7 @@
 import Adapt from 'core/js/adapt';
+import data from 'core/js/data';
 import device from 'core/js/device';
+import router from 'core/js/router';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { templates } from 'core/js/reactHelpers';
@@ -7,7 +9,10 @@ import { templates } from 'core/js/reactHelpers';
 class NavigationLogoView extends Backbone.View {
 
   className() {
-    return 'navigation-logo';
+    return [
+      'navigation-logo',
+      NavigationLogoView.courseConfig._routeToLocation && 'has-link'
+    ].filter(Boolean).join(' ');
   }
 
   attributes() {
@@ -16,8 +21,15 @@ class NavigationLogoView extends Backbone.View {
     };
   }
 
+  events() {
+    return {
+      click: 'navigateToLocation'
+    };
+  }
+
   initialize() {
     this.listenTo(Adapt, 'device:changed', this.changed);
+    this.navigateToLocation = this.navigateToLocation.bind(this);
     this.render();
   }
 
@@ -43,7 +55,7 @@ class NavigationLogoView extends Backbone.View {
   }
 
   setLogoSrc() {
-    if (!NavigationLogoView.courseConfig ?._graphic?.src) return;
+    if (!NavigationLogoView.courseConfig?._graphic?.src) return;
 
     const src = NavigationLogoView.courseConfig._graphic.src;
     this.model.set('src', src);
@@ -71,6 +83,24 @@ class NavigationLogoView extends Backbone.View {
       this.$el.addClass('u-display-none');
     } else {
       this.$el.removeClass('u-display-none');
+    }
+  }
+
+  navigateToLocation() {
+    const redirectToId = NavigationLogoView.courseConfig._routeToLocation;
+    if (!redirectToId) return;
+
+    const model = data.findById(redirectToId);
+    if (!model) return;
+
+    switch (model.get('_type')) {
+      case 'course':
+        router.navigateToHomeRoute();
+        break;
+      case 'menu':
+      case 'page':
+        router.navigateToElement(model.get('_id'));
+        break;
     }
   }
 };

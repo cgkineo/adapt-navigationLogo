@@ -87,6 +87,12 @@
                 }
               }
             },
+            "_routeToLocation": {
+              "type": "string",
+              "title": "Link",
+              "description": "When set to a valid Adapt element, the logo image will link to the specified location. Valid values include a page (e.g. co-100) or a menu (e.g. course)",
+              "default": ""
+            },
             "_fillNavHeight": {
               "type": "boolean",
               "title": "Make logo fill navigation bar height",
