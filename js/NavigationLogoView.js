@@ -17,13 +17,16 @@ class NavigationLogoView extends Backbone.View {
 
   attributes() {
     return {
-      'data-order': (Adapt.course.get('_globals')?._extensions?._navigationLogo?._navOrder || 0)
+      'data-order': (Adapt.course.get('_globals')?._extensions?._navigationLogo?._navOrder || 0),
+      role: NavigationLogoView.courseConfig._routeToLocation && 'link',
+      tabindex: NavigationLogoView.courseConfig._routeToLocation && 0
     };
   }
 
   events() {
     return {
-      click: 'navigateToLocation'
+      click: 'navigateToLocation',
+      keydown: 'navigateToLocation'
     };
   }
 
@@ -86,9 +89,12 @@ class NavigationLogoView extends Backbone.View {
     }
   }
 
-  navigateToLocation() {
+  navigateToLocation(event) {
     const redirectToId = NavigationLogoView.courseConfig._routeToLocation;
     if (!redirectToId) return;
+
+    if (event.code && !['Space', 'Enter'].includes(event.code)) return;
+    if (event?.preventDefault) event.preventDefault();
 
     const model = data.findById(redirectToId);
     if (!model) return;
