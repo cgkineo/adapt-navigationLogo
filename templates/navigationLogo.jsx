@@ -1,28 +1,35 @@
 import React from 'react';
-import { classes } from 'core/js/reactHelpers';
+import device from 'core/js/device';
+import { classes, templates } from 'core/js/reactHelpers';
 
 export default function NavigationLogo(props) {
   const {
-    src,
-    alt,
-    _fillNavHeight
+    _hideLogoForMobile,
+    _fillNavHeight,
+    _graphic
   } = props;
 
+  const hideLogoForMobile = ( _hideLogoForMobile && !device.isScreenSizeMin('medium') )
+    ? false
+    : true;
+
   return (
+    <>
+      {hideLogoForMobile &&
+      <div
+        className={classes([
+          'navigation-logo__inner',
+          _fillNavHeight && 'is-fill'
+        ])}
+      >
 
-    <div
-      className={classes([
-        'navigation-logo__inner',
-        _fillNavHeight && 'is-fill'
-      ])}
-    >
-      <img
-        className='navigation-logo__image'
-        src={src}
-        aria-label={alt || null}
-        aria-hidden={!alt || null}
-      />
-    </div>
+        <templates.image {..._graphic}
+          classNamePrefixes={['navigation-logo']}
+          attributionClassNamePrefixes={['navigation-logo']}
+        />
 
+      </div>
+      }
+    </>
   );
 }

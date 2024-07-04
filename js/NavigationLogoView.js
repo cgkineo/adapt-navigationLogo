@@ -32,7 +32,7 @@ class NavigationLogoView extends Backbone.View {
   }
 
   initialize() {
-    this.listenTo(Adapt, 'device:changed', this.changed);
+    this.listenTo(Adapt, 'device:changed', this.render);
     this.navigateToLocation = this.navigateToLocation.bind(this);
     this.render();
   }
@@ -42,52 +42,7 @@ class NavigationLogoView extends Backbone.View {
   }
 
   render() {
-    this.changed();
-  }
-
-  changed() {
-    this.setIsDeviceSmall();
-    this.setLogoSrc();
-    this.setLogoAlt();
-    this.hideForMobile();
-
-    ReactDOM.render(<templates.navigationLogo {...this.model.toJSON()} />, this.el);
-  }
-
-  setIsDeviceSmall() {
-    this.model.set('_isDeviceSmall', device.screenSize === 'small');
-  }
-
-  setLogoSrc() {
-    if (!NavigationLogoView.courseConfig?._graphic?.src) return;
-
-    const src = NavigationLogoView.courseConfig._graphic.src;
-    this.model.set('src', src);
-
-    // Check for mobile graphic
-    const _isDeviceSmall = this.model.get('_isDeviceSmall');
-    if (!_isDeviceSmall || !NavigationLogoView.courseConfig._graphic?._mobileSrc) return;
-
-    const mobileSrc = NavigationLogoView.courseConfig._graphic._mobileSrc;
-    this.model.set('src', mobileSrc);
-  }
-
-  setLogoAlt() {
-    if (!NavigationLogoView.courseConfig?._graphic?.alt) return;
-
-    const alt = NavigationLogoView.courseConfig._graphic.alt;
-    this.model.set('alt', alt);
-  }
-
-  hideForMobile() {
-    const _isDeviceSmall = this.model.get('_isDeviceSmall');
-    const _hideLogoForMobile = NavigationLogoView.courseConfig._hideLogoForMobile;
-
-    if (_isDeviceSmall && _hideLogoForMobile) {
-      this.$el.addClass('u-display-none');
-    } else {
-      this.$el.removeClass('u-display-none');
-    }
+    ReactDOM.render(<templates.navigationLogo {...NavigationLogoView.courseConfig} />, this.el);
   }
 
   navigateToLocation(event) {

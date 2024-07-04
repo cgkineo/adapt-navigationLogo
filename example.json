@@ -2,17 +2,18 @@
 "_globals": {
     "_extensions": {
         "_navigationLogo": {
-            "_navOrder": 1
+            "_navOrder": 0
         }
     }
 }
+
 // Enable global logo
 "_navigationLogo": {
     "_isEnabled": true,
     "_isHiddenOnMenu": false,
     "_graphic": {
-        "src": "assets/example.png",
-        "_mobileSrc": "",
+        "_large": "assets/example.png",
+        "_small": "assets/example-small.png",
         "alt": ""
     },
     "_routeToLocation": "",
@@ -20,7 +21,8 @@
     "_hideLogoForMobile": true
 }
 
-// contentObjects.json - Disable for this page
+// contentObjects.json
+// Disable for this page
 "_navigationLogo": {
     "_isEnabled": false
 }
