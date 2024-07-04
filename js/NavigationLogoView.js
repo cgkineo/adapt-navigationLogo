@@ -1,6 +1,5 @@
 import Adapt from 'core/js/adapt';
 import data from 'core/js/data';
-import device from 'core/js/device';
 import location from 'core/js/location';
 import router from 'core/js/router';
 import React from 'react';
