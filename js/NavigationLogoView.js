@@ -97,6 +97,11 @@ class NavigationLogoView extends Backbone.View {
     if (event.code && !['Space', 'Enter'].includes(event.code)) return;
     if (event?.preventDefault) event.preventDefault();
 
+    if(redirectToId === '/' || redirectToId === '\\' || redirectToId === 'menu' || redirectToId === 'home') {
+      router.navigateToHomeRoute();
+      return;
+    }
+
     const model = data.findById(redirectToId);
     if (!model) return;
 
