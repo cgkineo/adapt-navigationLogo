@@ -5,7 +5,7 @@ class NavigationLogo extends Backbone.Controller {
 
   initialize() {
     this.listenTo(Adapt, {
-      'menuView:postRender pageView:postRender': this.onPostRender
+      'contentObjectView:postRender': this.onContentObjectPostRender
     });
   }
 
@@ -13,16 +13,16 @@ class NavigationLogo extends Backbone.Controller {
     return Adapt.course.get('_navigationLogo');
   }
 
-  onPostRender(view) {
+  onContentObjectPostRender(view) {
     if (this.logoView) this.logoView.remove();
 
     const config = view.model.get('_navigationLogo');
     if (
-      (!NavigationLogo.courseConfig || !NavigationLogo.courseConfig._isEnabled) ||
+      (!NavigationLogo.courseConfig?._isEnabled) ||
       (config && (!config._isEnabled || config._isHiddenOnMenu))
     ) return;
 
-    const model = new Backbone.Model(config);
+    const model = new Backbone.Model(NavigationLogo.courseConfig);
     model.set('_fillNavHeight', NavigationLogo.courseConfig._fillNavHeight);
     this.logoView = new NavigationLogoView({ model });
 

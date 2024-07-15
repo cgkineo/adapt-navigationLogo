@@ -56,21 +56,21 @@
               "type": "object",
               "title": "Logo image",
               "properties": {
-                "src": {
+                "_large": {
                   "type": "string",
                   "isObjectId": true,
-                  "title": "Image",
-                  "description": "The provided logo must be 24px high minimum.",
+                  "title": "Large",
+                  "description": "Large image for this item - used on desktop. The provided logo must be 24px high minimum.",
                   "_backboneForms": {
                     "type": "Asset",
                     "media": "image"
                   }
                 },
-                "_mobileSrc": {
+                "_small": {
                   "type": "string",
                   "isObjectId": true,
-                  "title": "Optional mobile image",
-                  "description": "Useful for displaying a smaller logo for mobile view. The provided logo must be 24px high minimum.",
+                  "title": "Small",
+                  "description": "Small image for this item - used on mobiles. The provided logo must be 24px high minimum.",
                   "_backboneForms": {
                     "type": "Asset",
                     "media": "image"
