@@ -9,13 +9,11 @@ export default function NavigationLogo(props) {
     _graphic
   } = props;
 
-  const hideLogoForMobile = ( _hideLogoForMobile && !device.isScreenSizeMin('medium') )
-    ? false
-    : true;
+  const isVisible = !(_hideLogoForMobile && !device.isScreenSizeMin('medium'));
 
   return (
     <>
-      {hideLogoForMobile &&
+      {isVisible &&
       <div
         className={classes([
           'navigation-logo__inner',

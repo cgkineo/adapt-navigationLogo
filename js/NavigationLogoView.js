@@ -41,7 +41,7 @@ class NavigationLogoView extends Backbone.View {
   }
 
   render() {
-    ReactDOM.render(<templates.navigationLogo {...NavigationLogoView.courseConfig} />, this.el);
+    ReactDOM.render(<templates.navigationLogo {...this.model.toJSON()} />, this.el);
   }
 
   navigateToLocation(event) {
