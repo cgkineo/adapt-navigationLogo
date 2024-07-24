@@ -8,59 +8,35 @@
 
 The image displays with minimal padding by default or can be configured to fill the navigation bar height. For mobile, an alternative, mobile-friendly image can be specified or the logo can be hidden entirely. The logo can be shown on the menu, on specific pages, or everywhere as default.
 
-## Attributes
+### Attributes
 
 The following attributes are set within *course.json*.
 
-### **\_navigationLogo** (object)
+**\_navigationLogo** (object): The object that defines the content to render. It contains values for **\_isEnabled**, **\_isHiddenOnMenu**, **\_graphic**, **\_routeToLocation**, **\_fillNavHeight**, and **\_hideLogoForMobile**.
 
-The object that defines the content to render. It contains the following settings:
+>**\_isEnabled** (boolean): Turns on and off the **Navigation Logo** extension.
 
-#### **\_isEnabled** (boolean)
+>**\_isHiddenOnMenu** (boolean): When `true`, hides the logo on the main menu. Default: `false`.
 
-Turns on and off the **Navigation Logo** extension.
+>**\_graphic** (object): The graphic object that defines the image which is rendered. The assumed use case for this image is to display a client's logo. It contains values for **\_large**, **\_small**, and **alt**.
 
-#### **\_isHiddenOnMenu** (boolean)
+>>**\_large** (string): File name (including path) of the image. Path should be relative to the `src` folder (e.g. "course/en/images/logo.jpg").
 
-When `true`, hides the logo on the main menu. Default: `false`
+>>**\_small** (string): File name (including path) of the image. Used to potentially display an alternative image for mobile view. Useful for displaying a smaller logo.
 
-#### **\_graphic** (object)
+>>**alt** (sring): This text becomes the image’s [alt](https://github.com/adaptlearning/adapt_framework/wiki/Providing-good-alt-text) attribute.
 
-The graphic object that defines the image which is rendered. The assumed use case for this image is to display a client's logo. It contains the following settings:
+>**\_routeToLocation** (string): When set to a valid Adapt element, the logo image will link to the specified location. Valid values include a page (e.g. `co-100`) or a menu (e.g. `course`). `@course` can used to always returns to the main menu of the course..
 
-##### **src** (string)
+>**\_fillNavHeight** (boolean): Default: `false` where the image is displayed with minimal padding. Set to `true` for the image to fill the nav bar height.
 
-File name (including path) of the image. Path should be relative to the `src` folder (e.g. "course/en/images/logo.jpg").
-
-##### **\_mobileSrc** (string)
-
-Optional, file name (including path) of the image. Used to display an alternative image for mobile view. Useful for displaying a smaller logo.
-
-##### **alt** (string)
-
-This text becomes the image’s [alt](https://github.com/adaptlearning/adapt_framework/wiki/Providing-good-alt-text) attribute.
-
-#### **_routeToLocation** (string)
-
-When set to a valid Adapt element, the logo image will link to the specified location. Valid values include a page (e.g. `co-100`) or a menu (e.g. `course`). `@course` can used to always returns to the main menu of the course.
-
-#### **\_fillNavHeight** (boolean)
-
-Default: `false` where the image is displayed with minimal padding. Set to `true` for the image to fill the nav bar height.
-
-#### **\_hideLogoForMobile** (boolean)
-
-Optional, hide logo for mobile view. Useful to declutter the navigation bar where limited space is available.
+>**\_hideLogoForMobile** (boolean): Optional, hide logo for mobile view. Useful to declutter the navigation bar where limited space is available.
 
 The following attributes are set within *contentObjects.json*.
 
-### **\_navigationLogo** (object)
+**\_navigationLogo** (object): The object that defines the content to render. It contains the value for **\_isEnabled**.
 
-The object that defines the content to render. It contains the following settings:
-
-#### **\_isEnabled** (boolean)
-
-When `false`, hides the logo on a specific page or sub menu. Default: `true`
+>**\_isEnabled** (boolean): When `false`, hides the logo on a specific page or sub menu. Default: `true`.
 
 ## Accessibility
 

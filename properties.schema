@@ -50,23 +50,23 @@
                   "required": true,
                   "title": "Logo image",
                   "properties": {
-                    "src": {
+                    "_large": {
                       "type": "string",
                       "required": false,
                       "default": "",
-                      "title": "Image",
+                      "title": "Large",
                       "inputType": "Asset:image",
                       "validators": [],
-                      "help": "The provided logo must be 24px high minimum."
+                      "help": "Large image for this item - used on desktop. The provided logo must be 24px high minimum."
                     },
-                    "_mobileSrc": {
+                    "_small": {
                       "type": "string",
                       "required": false,
                       "default": "",
-                      "title": "Optional mobile image",
+                      "title": "Small",
                       "inputType": "Asset:image",
                       "validators": [],
-                      "help": "Useful for displaying a smaller logo for mobile view. The provided logo must be 24px high minimum."
+                      "help": "Small image for this item - used on mobiles. The provided logo must be 24px high minimum."
                     },
                     "alt": {
                       "type": "string",
