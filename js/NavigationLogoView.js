@@ -97,7 +97,7 @@ class NavigationLogoView extends Backbone.View {
     if (event.code && !['Space', 'Enter'].includes(event.code)) return;
     if (event?.preventDefault) event.preventDefault();
 
-    if(redirectToId === '@course') {
+    if (redirectToId === '@course') {
       router.navigateToHomeRoute();
       return;
     }
