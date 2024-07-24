@@ -15,7 +15,7 @@
         "_mobileSrc": "",
         "alt": ""
     },
-    "_routeToLocation": "",
+    "_routeToLocation": "@course",
     "_fillNavHeight": false,
     "_hideLogoForMobile": true
 }

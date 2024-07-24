@@ -42,7 +42,7 @@ This text becomes the image’s [alt](https://github.com/adaptlearning/adapt_fra
 
 #### **_routeToLocation** (string)
 
-When set to a valid Adapt element, the logo image will link to the specified location. Valid values include a page (e.g. `co-100`) or a menu (e.g. `course`)
+When set to a valid Adapt element, the logo image will link to the specified location. Valid values include a page (e.g. `co-100`) or a menu (e.g. `course`). `@course` can used to always returns to the main menu of the course.
 
 #### **\_fillNavHeight** (boolean)
 
