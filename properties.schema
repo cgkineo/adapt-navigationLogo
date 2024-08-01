@@ -83,7 +83,7 @@
                 "_routeToLocation": {
                   "type": "string",
                   "title": "Link",
-                  "help": "When set to a valid Adapt element, the logo image will link to the specified location. Valid values include a page (e.g. co-100) or a menu (e.g. course)",
+                  "help": "When set to a valid Adapt element, the logo image will link to the specified location. Valid values include a page (e.g. `co-100`) or a menu (e.g. `course`). `@course` can be used to always return to the main menu of the course.",
                   "required": false,
                   "validators": [],
                   "default": ""
