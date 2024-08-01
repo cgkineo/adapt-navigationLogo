@@ -16,7 +16,7 @@
         "_small": "assets/example-small.png",
         "alt": ""
     },
-    "_routeToLocation": "@course",
+    "_routeToLocation": "",
     "_fillNavHeight": false,
     "_hideLogoForMobile": true
 }
