@@ -1,4 +1,4 @@
-// import { describe, whereContent, whereFromPlugin, mutateContent, checkContent, updatePlugin } from 'adapt-migrations';
+// import { describe, whereContent, whereFromPlugin, mutateContent, checkContent, updatePlugin, getCourse } from 'adapt-migrations';
 // import _ from 'lodash';
 
 // describe('Navigation Logo - v3.3.0 to v4.0.0', async () => {

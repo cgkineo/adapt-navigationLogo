@@ -1,11 +1,11 @@
-import { describe, whereFromPlugin, mutateContent, checkContent, updatePlugin } from 'adapt-migrations';
+import { describe, whereFromPlugin, mutateContent, checkContent, updatePlugin, getCourse } from 'adapt-migrations';
 import _ from 'lodash';
 
 describe('Navigation Logo - v2.1.0 to v3.0.1', async () => {
   let course, courseNavLogoGlobals;
   whereFromPlugin('Navigation Logo - from v', { name: 'adapt-navigationLogo', version: '<3.0.1' });
   mutateContent('Navigation Logo - add globals if missing', async (content) => {
-    course = content.find(({ _type }) => _type === 'course');
+    course = getCourse();
     if (!_.has(course, '_globals._extensions._navigationLogo')) _.set(course, '_globals._extensions._navigationLogo', {});
     courseNavLogoGlobals = course._globals._extensions._navigationLogo;
     return true;
@@ -29,7 +29,7 @@ describe('Navigation Logo - v3.0.1 to v3.0.3', async () => {
   let course, courseNavLogo;
   whereFromPlugin('Navigation Logo - from v3.0.1', { name: 'adapt-navigationLogo', version: '<3.0.3' });
   mutateContent('Navigation Logo - add course _navigationLogo if missing', async (content) => {
-    course = content.find(({ _type }) => _type === 'course');
+    course = getCourse();
     if (!_.has(course, '_navigationLogo')) _.set(course, '_navigationLogo', {});
     courseNavLogo = course._navigationLogo;
     return true;
