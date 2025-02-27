@@ -71,3 +71,23 @@ describe('Navigation Logo - v3.0.1 to v3.0.3', async () => {
   });
   updatePlugin('Navigation Logo - update to v3.0.3', { name: 'adapt-navigationLogo', version: '3.0.3', framework: '>=5.0.0' });
 });
+
+describe('Navigation Logo - v3.0.3 to v3.1.0', async () => {
+  let course, courseNavLogo;
+  whereFromPlugin('Navigation Logo - from v3.0.3', { name: 'adapt-navigationLogo', version: '<3.1.0' });
+  mutateContent('Navigation Logo - Rename _isHidden to _isHiddenOnMenu', async (content) => {
+    course = getCourse();
+    courseNavLogo = course._navigationLogo;
+    if (courseNavLogo._isHidden !== undefined) {
+      courseNavLogo._isHiddenOnMenu = courseNavLogo._isHidden;
+      delete courseNavLogo._isHidden;
+    }
+    return true;
+  });
+  checkContent('Navigation Logo - check that _isHidden to renamed _isHiddenOnMenu', async content => {
+    const isValid = courseNavLogo._isHidden === undefined && courseNavLogo._isHiddenOnMenu !== undefined;
+    if (!isValid) throw new Error('Navigation Logo - _isHidden or _isHiddenOnMenu invalid');
+    return true;
+  });
+  updatePlugin('Navigation Logo - update to v3.1.0', { name: 'adapt-navigationLogo', version: '3.1.0', framework: '>=5.0.0' });
+});
