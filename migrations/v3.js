@@ -91,3 +91,37 @@ describe('Navigation Logo - v3.0.3 to v3.1.0', async () => {
   });
   updatePlugin('Navigation Logo - update to v3.1.0', { name: 'adapt-navigationLogo', version: '3.1.0', framework: '>=5.0.0' });
 });
+
+describe('Navigation Logo - v3.1.2 to v3.2.0', async () => {
+  let course, courseGlobalsNavLogo;
+  whereFromPlugin('Navigation Logo - from v3.1.2', { name: 'adapt-navigationLogo', version: '<3.2.0' });
+  mutateContent('Navigation Logo - change globals _navOrder', async (content) => {
+    course = getCourse();
+    courseGlobalsNavLogo = course._globals._extensions._navigationLogo;
+    courseGlobalsNavLogo._navOrder = 0;
+    return true;
+  });
+  checkContent('Navigation Logo - check _navOrder', async content => {
+    const isValid = courseGlobalsNavLogo._navOrder === 0;
+    if (!isValid) throw new Error('Navigation Logo - globals _navOrder invalid');
+    return true;
+  });
+  updatePlugin('Navigation Logo - update to v3.2.0', { name: 'adapt-navigationLogo', version: '3.2.0', framework: '>=5.30.3' });
+});
+
+describe('Navigation Logo - v3.2.0 to v3.3.0', async () => {
+  let course, courseNavLogo;
+  whereFromPlugin('Navigation Logo - from v3.2.0', { name: 'adapt-navigationLogo', version: '<3.3.0' });
+  mutateContent('Navigation Logo - add _routeToLocation', async (content) => {
+    course = getCourse();
+    courseNavLogo = course._navigationLogo;
+    _.set(courseNavLogo, '_routeToLocation', '');
+    return true;
+  });
+  checkContent('Navigation Logo - check _routeToLocation', async content => {
+    const isValid = courseNavLogo._routeToLocation !== undefined;
+    if (!isValid) throw new Error('Navigation Logo - _routeToLocation invalid');
+    return true;
+  });
+  updatePlugin('Navigation Logo - update to v3.3.0', { name: 'adapt-navigationLogo', version: '3.3.0', framework: '>=5.30.3' });
+});
