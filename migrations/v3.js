@@ -3,7 +3,7 @@ import _ from 'lodash';
 
 describe('Navigation Logo - v2.1.0 to v3.0.1', async () => {
   let course, courseNavLogoGlobals;
-  whereFromPlugin('Navigation Logo - from v', { name: 'adapt-navigationLogo', version: '<3.0.1' });
+  whereFromPlugin('Navigation Logo - from v2.1.0', { name: 'adapt-navigationLogo', version: '<3.0.1' });
   mutateContent('Navigation Logo - add globals if missing', async (content) => {
     course = getCourse();
     if (!_.has(course, '_globals._extensions._navigationLogo')) _.set(course, '_globals._extensions._navigationLogo', {});
