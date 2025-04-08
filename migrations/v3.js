@@ -1,4 +1,4 @@
-import { describe, whereFromPlugin, mutateContent, checkContent, updatePlugin, getCourse } from 'adapt-migrations';
+import { describe, whereFromPlugin, mutateContent, checkContent, updatePlugin, getCourse, testStopWhere, testSuccessWhere } from 'adapt-migrations';
 import _ from 'lodash';
 
 describe('Navigation Logo - v2.1.0 to v3.0.1', async () => {
@@ -23,6 +23,26 @@ describe('Navigation Logo - v2.1.0 to v3.0.1', async () => {
     return true;
   });
   updatePlugin('Navigation Logo - update to v3.0.1', { name: 'adapt-navigationLogo', version: '3.0.1', framework: '>=5.0.0' });
+
+  testSuccessWhere('navigation logo with empty course', {
+    fromPlugins: [{ name: 'adapt-navigationLogo', version: '2.1.0' }],
+    content: [
+      { _id: 'c-100', _component: 'mcq' },
+      { _type: 'course' }
+    ]
+  });
+
+  testSuccessWhere('navigation logo with empty course config', {
+    fromPlugins: [{ name: 'adapt-navigationLogo', version: '2.1.0' }],
+    content: [
+      { _id: 'c-100', _component: 'mcq' },
+      { _type: 'course', _navigationLogo: {} }
+    ]
+  });
+
+  testStopWhere('incorrect version', {
+    fromPlugins: [{ name: 'adapt-navigationLogo', version: '3.0.1' }]
+  });
 });
 
 describe('Navigation Logo - v3.0.1 to v3.0.3', async () => {
@@ -70,6 +90,26 @@ describe('Navigation Logo - v3.0.1 to v3.0.3', async () => {
     return true;
   });
   updatePlugin('Navigation Logo - update to v3.0.3', { name: 'adapt-navigationLogo', version: '3.0.3', framework: '>=5.0.0' });
+
+  testSuccessWhere('navigation logo with empty course', {
+    fromPlugins: [{ name: 'adapt-navigationLogo', version: '3.0.1' }],
+    content: [
+      { _id: 'c-100', _component: 'mcq' },
+      { _type: 'course' }
+    ]
+  });
+
+  testSuccessWhere('navigation logo with empty course config', {
+    fromPlugins: [{ name: 'adapt-navigationLogo', version: '3.0.1' }],
+    content: [
+      { _id: 'c-100', _component: 'mcq' },
+      { _type: 'course', _navigationLogo: {} }
+    ]
+  });
+
+  testStopWhere('incorrect version', {
+    fromPlugins: [{ name: 'adapt-navigationLogo', version: '3.0.3' }]
+  });
 });
 
 describe('Navigation Logo - v3.0.3 to v3.1.0', async () => {
@@ -90,6 +130,26 @@ describe('Navigation Logo - v3.0.3 to v3.1.0', async () => {
     return true;
   });
   updatePlugin('Navigation Logo - update to v3.1.0', { name: 'adapt-navigationLogo', version: '3.1.0', framework: '>=5.0.0' });
+
+  testSuccessWhere('navigation logo with empty course', {
+    fromPlugins: [{ name: 'adapt-navigationLogo', version: '3.0.3' }],
+    content: [
+      { _id: 'c-100', _component: 'mcq' },
+      { _type: 'course' }
+    ]
+  });
+
+  testSuccessWhere('navigation logo with empty course config', {
+    fromPlugins: [{ name: 'adapt-navigationLogo', version: '3.0.3' }],
+    content: [
+      { _id: 'c-100', _component: 'mcq' },
+      { _type: 'course', _navigationLogo: {} }
+    ]
+  });
+
+  testStopWhere('incorrect version', {
+    fromPlugins: [{ name: 'adapt-navigationLogo', version: '3.1.0' }]
+  });
 });
 
 describe('Navigation Logo - v3.1.2 to v3.2.0', async () => {
@@ -107,6 +167,26 @@ describe('Navigation Logo - v3.1.2 to v3.2.0', async () => {
     return true;
   });
   updatePlugin('Navigation Logo - update to v3.2.0', { name: 'adapt-navigationLogo', version: '3.2.0', framework: '>=5.30.3' });
+
+  testSuccessWhere('navigation logo with empty course', {
+    fromPlugins: [{ name: 'adapt-navigationLogo', version: '3.1.2' }],
+    content: [
+      { _id: 'c-100', _component: 'mcq' },
+      { _type: 'course' }
+    ]
+  });
+
+  testSuccessWhere('navigation logo with empty course config', {
+    fromPlugins: [{ name: 'adapt-navigationLogo', version: '3.1.2' }],
+    content: [
+      { _id: 'c-100', _component: 'mcq' },
+      { _type: 'course', _navigationLogo: {} }
+    ]
+  });
+
+  testStopWhere('incorrect version', {
+    fromPlugins: [{ name: 'adapt-navigationLogo', version: '3.2.0' }]
+  });
 });
 
 describe('Navigation Logo - v3.2.0 to v3.3.0', async () => {
@@ -124,4 +204,24 @@ describe('Navigation Logo - v3.2.0 to v3.3.0', async () => {
     return true;
   });
   updatePlugin('Navigation Logo - update to v3.3.0', { name: 'adapt-navigationLogo', version: '3.3.0', framework: '>=5.30.3' });
+
+  testSuccessWhere('navigation logo with empty course', {
+    fromPlugins: [{ name: 'adapt-navigationLogo', version: '3.2.0' }],
+    content: [
+      { _id: 'c-100', _component: 'mcq' },
+      { _type: 'course' }
+    ]
+  });
+
+  testSuccessWhere('navigation logo with empty course config', {
+    fromPlugins: [{ name: 'adapt-navigationLogo', version: '3.2.0' }],
+    content: [
+      { _id: 'c-100', _component: 'mcq' },
+      { _type: 'course', _navigationLogo: {} }
+    ]
+  });
+
+  testStopWhere('incorrect version', {
+    fromPlugins: [{ name: 'adapt-navigationLogo', version: '3.3.0' }]
+  });
 });

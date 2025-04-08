@@ -1,4 +1,4 @@
-import { describe, whereFromPlugin, mutateContent, checkContent, updatePlugin, getCourse } from 'adapt-migrations';
+import { describe, whereFromPlugin, mutateContent, checkContent, updatePlugin, getCourse, testStopWhere, testSuccessWhere } from 'adapt-migrations';
 import _ from 'lodash';
 
 describe('Navigation Logo - v3.3.0 to v4.0.0', async () => {
@@ -41,4 +41,24 @@ describe('Navigation Logo - v3.3.0 to v4.0.0', async () => {
     return true;
   });
   updatePlugin('Navigation Logo - update to v4.0.0', { name: 'adapt-navigationLogo', version: '4.0.0', framework: '>=5.30.3' });
+
+  testSuccessWhere('navigation logo with empty course', {
+    fromPlugins: [{ name: 'adapt-navigationLogo', version: '3.3.0' }],
+    content: [
+      { _id: 'c-100', _component: 'mcq' },
+      { _type: 'course' }
+    ]
+  });
+
+  testSuccessWhere('navigation logo with empty course config', {
+    fromPlugins: [{ name: 'adapt-navigationLogo', version: '3.3.0' }],
+    content: [
+      { _id: 'c-100', _component: 'mcq' },
+      { _type: 'course', _navigationLogo: {} }
+    ]
+  });
+
+  testStopWhere('incorrect version', {
+    fromPlugins: [{ name: 'adapt-navigationLogo', version: '4.0.0' }]
+  });
 });
