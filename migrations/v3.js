@@ -66,9 +66,9 @@ describe('Navigation Logo - v3.0.1 to v3.0.3', async () => {
     return true;
   });
   mutateContent('Navigation Logo - add _navigationLogo._isEnabled to contentObjects', async (content) => {
-    contentObjects.forEach(contentObject => {
-      _.set(contentObject, '_navigationLogo._isEnabled', true);
-    });
+    contentObjects.forEach(contentObject =>
+      _.set(contentObject, '_navigationLogo._isEnabled', true)
+    );
     return true;
   });
   checkContent('Navigation Logo - check course _navigationLogo object', async content => {
