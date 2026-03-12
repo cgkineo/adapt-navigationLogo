@@ -18,6 +18,7 @@
     },
     "_routeToLocation": "",
     "_fillNavHeight": false,
+    "_isHorizontallyCentered": false,
     "_hideLogoForMobile": true
 }
 
