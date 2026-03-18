@@ -97,6 +97,15 @@
                   "validators": [],
                   "help": "Logo displays with minimal padding by default. Set to true for logo to fill the nav bar height."
                 },
+                "_isHorizontallyCentered": {
+                  "type": "boolean",
+                  "required": false,
+                  "default": false,
+                  "title": "Center logo horizontally",
+                  "inputType": "Checkbox",
+                  "validators": [],
+                  "help": "When enabled, the logo is centered horizontally in the navigation bar."
+                },
                 "_hideLogoForMobile": {
                   "type": "boolean",
                   "required": false,

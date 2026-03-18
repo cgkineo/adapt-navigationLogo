@@ -11,7 +11,8 @@ class NavigationLogoView extends Backbone.View {
   className() {
     return [
       'navigation-logo',
-      NavigationLogoView.courseConfig._routeToLocation && 'has-link'
+      NavigationLogoView.courseConfig._routeToLocation && 'has-link',
+      NavigationLogoView.courseConfig._isHorizontallyCentered && 'is-centered'
     ].filter(Boolean).join(' ');
   }
 
