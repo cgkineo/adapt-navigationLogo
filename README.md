@@ -1,4 +1,4 @@
-# adapt-navigationLogo
+# adapt-navigationLogo 
 
 **Navigation Logo** is an *extension* for displaying an image in the course navigation bar.
 
