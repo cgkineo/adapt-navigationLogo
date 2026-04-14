@@ -26,7 +26,7 @@ The following attributes are set within *course.json*.
 
 >>**alt** (sring): This text becomes the image’s [alt](https://github.com/adaptlearning/adapt_framework/wiki/Providing-good-alt-text) attribute.
 
->**\_routeToLocation** (string): When set to a valid Adapt element, the logo image will link to the specified location. Valid values include a page (e.g. `co-100`) or a menu (e.g. `course`). `@course` can be used to always return to the main menu of the course.
+>**\_routeToLocation** (string): When set to a valid Adapt element, the logo image will link to the specified location. Valid values include any content object ID (e.g. co-100) or if you wish to just navigate to the main menu, either enter the overall course ID, or just enter @course, which bypasses any need to enter a specific course ID.
 
 >**\_fillNavHeight** (boolean): Default: `false` where the image is displayed with minimal padding. Set to `true` for the image to fill the nav bar height.
 
