@@ -43,7 +43,7 @@ The following attributes are set within *contentObjects.json*.
 Remember to include an `alt` attribute. Screen readers will read aloud alt text content, so leave the alt text empty (`"alt": ""`) if the logo is repeated in the course title.
 
 ----------------------------
-**Author / maintainer:** CGKineo<br>
+**Author / maintainer:** Mindtools Kineo<br>
 **AAT support:** Yes<br>
 **Accessibility support:** WAI AA<br>
 **RTL support:** Yes<br>
